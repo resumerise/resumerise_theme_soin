@@ -1,0 +1,28 @@
+<section class="sheet" id="skills">
+{{#ifIn "SKILL" @root.resume.settings.visibleCategories }}
+	<h2>{{@root.resume.settings.labels.skill.categoryTitle}}</h2>
+	{{#each resume.skills}}
+	<div class="item content">
+		{{>nav categoryKey=@root.resume.settings.categoryKeys.skill id=id showDelete=true}}
+		{{#if name}}
+		<div class="name">
+			{{name}}
+		</div>
+		{{/if}}
+		{{#if level}}
+		<div class="level">
+			<em>{{level}}</em>
+		</div>
+		{{/if}}
+		{{#if keywords.length}}
+		<ul class="keywords">
+			{{#each keywords}}
+			<li>{{.}}</li>
+			{{/each}}
+		</ul>
+		{{/if}}
+	</div>
+	{{/each}}
+	{{>add categoryKey=@root.resume.settings.categoryKeys.skill}}
+{{/ifIn}}
+</section>

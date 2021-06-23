@@ -1,0 +1,129 @@
+<section class="sheet" id='basics'>
+  <div class="content">
+  <%~ include('nav', {categoryKey: it.resume.settings.categoryKeys.basic, id: id, showDelete: false}) %>
+  <% if(it.resume.basics.name) { %>
+    <h1>
+      <%= it.resume.basics.name %>
+    </h1>
+  <% } %>
+  <% if(it.resume.basics.label) { %>
+  <h2>
+    <%= it.resume.basics.label %>
+  </h2>
+  <% } %>
+  <div class='contact'>
+    <% if(it.resume.basics.website) { %>
+      <div class='website'>
+        <strong>
+          <%= it.resume.settings.labels.basics.website %>
+        </strong>
+        {{website{ %>
+      </div>
+    <% } %>
+    <% if(it.resume.basics.email{ %>
+      <div class='email'>
+        <strong>
+          <%= it.resume.settings.labels.basics.email %>
+        </strong>
+        {{email{ %>
+      </div>
+    <% } %>
+    <% if(it.resume.basics.phone{ %>
+      <div class='phone'>
+        <strong>
+          <%= it.resume.settings.labels.basics.phone %>
+        </strong>
+        {{phone{ %>
+      </div>
+    <% } %>
+  </div>
+  <% if(it.resume.basics.summary{ %>
+    <div class='summary'>
+      <p>
+        {{summary %>
+      </p>
+    </div>
+  <% } %>
+  </div>
+  <% if(it.resume.basics.location) { %>
+  <div class="content">
+    <%~ include('nav', {categoryKey: it.resume.settings.categoryKeys.location, id: id, showDelete: false}) %>
+    <h3>
+      <%= it.resume.settings.labels.categories.location %>
+    </h3>
+    <section class="sheet" id='location'>
+      <% if(it.resume.basics.address) { %>
+        <div class='address'>
+          <strong>
+            <%= it.resume.settings.labels.location.address %>
+          </strong>
+          <%= it.resume.settings.labels.location.address %>
+        </div>
+      <% } %>
+      <% if(it.resume.basics.postalCode{ %>
+        <div class='postalCode'>
+          <strong>
+            <%= it.resume.settings.labels.location.postalCode %>
+          </strong>
+          <%= it.resume.settings.labels.location.postalCode %>
+        </div>
+      <% } %>
+      <% if(it.resume.basics.city{ %>
+        <div class='city'>
+          <strong>
+            <%= it.resume.settings.labels.location.city %>
+          </strong>
+          <%= it.resume.settings.labels.location.city %>
+        </div>
+      <% } %>
+      <% if(it.resume.basics.countryCode{ %>
+        <div class='countryCode'>
+          <strong>
+            <%= it.resume.settings.labels.location.countryCode %>
+          </strong>
+          <%= it.resume.settings.labels.location.countryCode %>
+        </div>
+      <% } %>
+      <% if(it.resume.basics.region{ %>
+        <div class='region'>
+          <strong>
+            <%= it.resume.settings.labels.location.region %>
+          </strong>
+          <%= it.resume.settings.labels.location.region %>
+        </div>
+      <% } %>
+    </section>
+  </div>
+  <% } %>
+  <% if(it.resume.settings.visibleCategories.includes('PROFILE')) { %>
+  <div class="content">
+    <%~ include('nav', {categoryKey: it.resume.settings.categoryKeys.profiles}) %>
+    <h3>
+      <%= it.resume.settings.labels.categories.profiles %>
+    </h3>
+    <section class="sheet" id='profiles'>
+      <% it.resume.basics.profiles.forEach(function(profile){ %>
+        <div class='item'>
+          <% if(profile.network %>
+            <strong class='network'>
+              <%= profile.network %>
+            </strong>
+          <% } %>
+          <% if(profile.username %>
+            <div class='username'>
+              <%= profile.username %>
+            </div>
+          <% } %>
+          <% if(profile.url %>
+            <div class='url'>
+              <a href="<%= profile.url %>"
+                Link
+              </a>
+            </div>
+          <% } %>
+        </div>
+      <% }) %>
+    </section>
+    </div>
+  <% } %>
+</section>

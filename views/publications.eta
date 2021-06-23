@@ -1,0 +1,36 @@
+<section class="sheet" id="publications">
+{{#ifIn "PUBLICATION" @root.resume.settings.visibleCategories }}
+	<h2>{{@root.resume.settings.labels.publication.categoryTitle}}</h2>
+	{{#each resume.publications}}
+	<div class="item content">
+		{{>nav categoryKey=@root.resume.settings.categoryKeys.publication id=id showDelete=true}}
+		{{#if name}}
+		<div class="name">
+			{{name}}
+		</div>
+		{{/if}}
+		{{#if publisher}}
+		<div class="publisher">
+			{{publisher}}
+		</div>
+		{{/if}}
+		{{#if releaseDate}}
+		<div class="releaseDate">
+			{{releaseDate}}
+		</div>
+		{{/if}}
+		{{#if website}}
+		<div class="website">
+			<a href="{{website}}">Link</a>
+		</div>
+		{{/if}}
+		{{#if summary}}
+		<div class="summary">
+			<p>{{summary}}</p>
+		</div>
+		{{/if}}
+	</div>
+	{{/each}}
+	{{>add categoryKey=@root.resume.settings.categoryKeys.publication}}
+{{/ifIn}}
+</section>

@@ -1,0 +1,55 @@
+<section class="sheet" id="education">
+{{#ifIn "EDUCATION" @root.resume.settings.visibleCategories }}
+	<h2>{{@root.resume.settings.labels.education.categoryTitle}}</h2>
+	{{#each resume.education}}
+	<div class="item content">
+		{{>nav categoryKey=@root.resume.settings.categoryKeys.skill id=id showDelete=true}}
+		<div class="date">
+			{{#if startDate}}
+			<span class="startDate">
+				{{startDate}}
+			</span>
+			{{/if}}
+			{{#if endDate}}
+			<span class="endDate">
+				- {{endDate}}
+			</span>
+			{{/if}}
+			{{#if present}}
+			<span class="endDate">
+				- {{resume.settings.general.present}}
+			</span>
+			{{/if}}
+		</div>
+		{{#if institution}}
+		<div class="institution">
+			{{institution}}
+		</div>
+		{{/if}}
+		{{#if area}}
+		<div class="area">
+			{{area}}
+		</div>
+		{{/if}}
+		{{#if studyType}}
+		<div class="studyType">
+			{{studyType}}
+		</div>
+		{{/if}}
+		{{#if gpa}}
+		<div class="gpa">
+			{{@root.resume.settings.labels.education.gpa}}: {{gpa}}
+		</div>
+		{{/if}}
+		{{#if courses.length}}
+		<ul class="courses">
+			{{#each courses}}
+			<li>{{.}}</li>
+			{{/each}}
+		</ul>
+		{{/if}}
+	</div>
+	{{/each}}
+	{{>add categoryKey=@root.resume.settings.categoryKeys.skill}}
+{{/ifIn}}
+</section>
