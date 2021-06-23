@@ -7,7 +7,7 @@ eta.configure({
 
 export const render = (jsonResume: string): string | Promise<string> | void => {
   var css = Deno.readTextFileSync("./style.css");
-  var tpl = Deno.readTextFileSync("./layout.eta");
+  var layout = Deno.readTextFileSync("./layout.eta");
 
   eta.templates.define(
     "award",
@@ -50,12 +50,12 @@ export const render = (jsonResume: string): string | Promise<string> | void => {
     eta.loadFile("./views/work.eta", {} as any, true),
   );
 
-  return eta.render(tpl, {
+  return eta.render(layout, {
     css: css,
     resume: JSON.parse(jsonResume),
     templates: [
-      "award",
       "basic",
+      "award",
       "education",
       "interest",
       "language",
