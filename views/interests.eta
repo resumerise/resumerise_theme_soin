@@ -1,23 +1,23 @@
 <section class="sheet" id="interests">
-{{#ifIn "INTEREST" @root.resume.settings.visibleCategories }}
-	<h2>{{@root.resume.settings.labels.interest.categoryTitle}}</h2>
-	{{#each resume.interests}}
+<% if(it.resume.settings?.visibleCategories?.includes('INTEREST')) { %>
+	<h2><%= it.resume.settings?.labels?.interest?.categoryTitle ? it.resume.settings.labels.interest.categoryTitle : '' %></h2>
+	<% it.resume?.interests.forEach(function(interest) { %>
 	<div class="item content">
-		{{>nav categoryKey=@root.resume.settings.categoryKeys.interest id=id showDelete=true}}
-		<% if(name) { %>
+		<% /* {{>nav categoryKey=@root.resume.settings.categoryKeys.interest id=id showDelete=true}} */ %>
+		<% if(interest.name) { %>
 		<div class="name">
-			<%= name %>
+			<%= interest.name %>
 		</div>
 		<% } %>
-		{{#if keywords.length}}
+		<% if(interest.keywords.length) { %>
 		<ul class="keywords">
-			{{#each keywords}}
-			<li>{{.}}</li>
-			{{/each}}
+			<% interest.keywords.forEach(function(keyword) { %>
+			<li><%= keyword %></li>
+			<% }) %>
 		</ul>
 		<% } %>
 	</div>
-	{{/each}}
-	{{>add categoryKey=@root.resume.settings.categoryKeys.interest}}
-{{/ifIn}}
+	<% }) %>
+	<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.interest}) %> */ %>
+<% } %>
 </section>

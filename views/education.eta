@@ -10,41 +10,41 @@
 				{{education.startDate}}
 			</span>
 			<% } %>
-			<% if(endDate) { %>
+			<% if(education.endDate) { %>
 			<span class="endDate">
-				- <%= endDate %>
+				- <%= education.endDate %>
 			</span>
 			<% } %>
-			<% if(present) { %>
+			<% if(education.present) { %>
 			<span class="endDate">
-				- <%= resume.settings.general.present %>
+				- <%= resume.settings?.general?.present %>
 			</span>
 			<% } %>
 		</div>
 		<% if(education.institution) { %>
 		<div class="institution">
-			<%= institution %>
+			<%= education.institution %>
 		</div>
 		<% } %>
 		<% if(education.area) { %>
 		<div class="area">
-			<%= area %>
+			<%= education.area %>
 		</div>
 		<% } %>
 		<% if(education.studyType) { %>
 		<div class="studyType">
-			<%= studyType %>
+			<%= education.studyType %>
 		</div>
 		<% } %>
 		<% if(education.gpa) { %>
 		<div class="gpa">
-			<strong><%= resume.settings?.labels?.education?.gpa ? resume.settings?.labels?.education?.gpa : '' %></strong>
-			<%= gpa %>
+			<strong><%= it.resume.settings?.labels?.education?.gpa ? resume.settings?.labels?.education?.gpa : '' %></strong>
+			<%= education.gpa %>
 		</div>
 		<% } %>
 		<% if (education.courses.length) { %>
 		<ul class="courses">
-			<% it.resume?.education?.courses.forEach(function(course) { %>
+			<% it.resume?.education?.courses?.forEach(function(course) { %>
 			<li><%= course %></li>
 			<% }) %>
 		</ul>

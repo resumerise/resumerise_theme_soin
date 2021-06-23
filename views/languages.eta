@@ -1,21 +1,21 @@
 <section class="sheet" id="languages">
-{{#ifIn "LANGUAGE" @root.resume.settings.visibleCategories }}
-	<h2>{{@root.resume.settings.labels.language.categoryTitle}}</h2>
-	{{#each resume.languages}}
+<% if(it.resume.settings?.visibleCategories?.includes('LANGUAGE')) { %>
+	<h2><%= it.resume.settings?.labels?.language?.categoryTitle ? it.resume.settings.labels.language.categoryTitle : '' %></h2>
+	<% it.resume?.languages.forEach(function(language) { %>
 	<div class="item content">
-		{{>nav categoryKey=@root.resume.settings.categoryKeys.language id=id showDelete=true}}
-		<% if (language) { %>
+		<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.language}) %> */ %>
+		<% if (language.language) { %>
 		<div class="language">
-			<%= language %>
+			<%= language.language %>
 		</div>
 		<% } %>
-		<% if (fluency) { %>
+		<% if (language.fluency) { %>
 		<div class="fluency">
-			<em><%= fluency %></em>
+			<em><%= language.fluency %></em>
 		</div>
 		<% } %>
 	</div>
-	{{/each}}
-	{{>add categoryKey=@root.resume.settings.categoryKeys.language}}
-{{/ifIn}}
+	<% }) %>
+	<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.language}) %> */ %>
+<% } %>
 </section>

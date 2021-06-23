@@ -1,55 +1,55 @@
 <section class="sheet" id="work">
-{{#ifIn "WORK" @root.resume.settings.visibleCategories }}
-	<h2>{{@root.resume.settings.labels.work.categoryTitle}}</h2>
-	{{#each resume.work}}
+<% if(it.resume.settings?.visibleCategories?.includes('WORK')) { %>
+	<h2><%= it.resume.settings?.labels?.work?.categoryTitle ? it.resume.settings.labels.work.categoryTitle : '' %></h2>
+	<% it.resume?.work.forEach(function(work) { %>
 	<div class="item content">
-		{{>nav categoryKey=@root.resume.settings.categoryKeys.work id=id showDelete=true}}
-		<% if (company) { %>
+		<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.work}) %> */ %>
+		<% if (work.company) { %>
 		<h3 class="name">
-			<%= company %>
+			<%= work.company %>
 		</h3>
 		<% } %>
 		<div class="date">
-			<% if (startDate) { %>
+			<% if (work.startDate) { %>
 			<span class="startDate">
-				<%= startDate %>
+				<%= work.startDate %>
 			</span>
 			<% } %>
-			<% if (endDate) { %>
+			<% if (work.endDate) { %>
 			<span class="endDate">
-				- <%= endDate %>
+				- <%= work.endDate %>
 			</span>
 			<% } %>
-			<% if (present) { %>
+			<% if (work.present) { %>
 			<span class="endDate">
-				- <%= resume.settings.general.present %>
+				- <%= it.resume.settings?.general?.present %>
 			</span>
 			<% } %>
 		</div>
-		<% if (position) { %>
+		<% if (work.position) { %>
 		<div class="position">
-			<%= position %>
+			<%= work.position %>
 		</div>
 		<% } %>
-		<% if (website) { %>
+		<% if (work.website) { %>
 		<div class="website">
-			<a href="<%= website %>"><%= website %></a>
+			<a href="<%= work.website %>"><%= work.website %></a>
 		</div>
 		<% } %>
-		<% if (summary) { %>
+		<% if (work.summary) { %>
 		<div class="summary">
-			<p><%= summary %></p>
+			<p><%= work.summary %></p>
 		</div>
 		<% } %>
-		{{#if highlights.length}}
+		<% if (work.highlights?.length) { %>
 		<ul class="highlights">
-			{{#each highlights}}
-			<li>{{.}}</li>
-			{{/each}}
+			<% work.highlights.forEach(function(highlight) { %>
+			<li><%= highlight %></li>
+			<% }) %>
 		</ul>
 		<% } %>
 	</div>
-	{{/each}}
-	{{>add categoryKey=@root.resume.settings.categoryKeys.work }}
-{{/ifIn}}
+	<% }) %>
+	<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.work}) %> */ %>
+<% } %>
 </section>

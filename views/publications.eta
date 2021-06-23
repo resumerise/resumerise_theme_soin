@@ -1,36 +1,36 @@
 <section class="sheet" id="publications">
-{{#ifIn "PUBLICATION" @root.resume.settings.visibleCategories }}
-	<h2>{{@root.resume.settings.labels.publication.categoryTitle}}</h2>
-	{{#each resume.publications}}
+<% if(it.resume.settings?.visibleCategories?.includes('PUBLICATION')) { %>
+	<h2><%= it.resume.settings?.labels?.publication?.categoryTitle ? it.resume.settings.labels.publication.categoryTitle : '' %></h2>
+	<% it.resume?.publications.forEach(function(publication) { %>
 	<div class="item content">
-		{{>nav categoryKey=@root.resume.settings.categoryKeys.publication id=id showDelete=true}}
-		<% if (name) { %>
+		<% /* <%~ include('nav', {categoryKey: it.resume.settings.categoryKeys.publication, id: id, showDelete: true}) %>  */ %>
+		<% if (publication.name) { %>
 		<div class="name">
-			<%= name %>
+			<%= publication.name %>
 		</div>
 		<% } %>
-		<% if (publisher) { %>
+		<% if (publication.publisher) { %>
 		<div class="publisher">
-			<%= publisher %>
+			<%= publication.publisher %>
 		</div>
 		<% } %>
-		<% if (releaseDate) { %>
+		<% if (publication.releaseDate) { %>
 		<div class="releaseDate">
-			<%= releaseDate %>
+			<%= publication.releaseDate %>
 		</div>
 		<% } %>
-		<% if (website) { %>
+		<% if (publication.website) { %>
 		<div class="website">
-			<a href="<%= website %>">Link</a>
+			<a href="<%= publication.website %>">Link</a>
 		</div>
 		<% } %>
-		<% if (summary) { %>
+		<% if (publication.summary) { %>
 		<div class="summary">
-			<p><%= summary %></p>
+			<p><%= publication.summary %></p>
 		</div>
 		<% } %>
 	</div>
-	{{/each}}
-	{{>add categoryKey=@root.resume.settings.categoryKeys.publication}}
-{{/ifIn}}
+	<% }) %>
+	<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.publication}) %> */ %>
+<% } %>
 </section>

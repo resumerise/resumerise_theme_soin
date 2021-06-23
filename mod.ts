@@ -21,34 +21,34 @@ export const render = (jsonResume: string): string | Promise<string> | void => {
     "education",
     eta.loadFile("./views/education.eta", {} as any, true),
   );
-  // eta.templates.define(
-  //   "interest",
-  //   eta.loadFile("./views/interests.eta", {} as any, true),
-  // );
-  // eta.templates.define(
-  //   "language",
-  //   eta.loadFile("./views/languages.eta", {} as any, true),
-  // );
-  // eta.templates.define(
-  //   "publication",
-  //   eta.loadFile("./views/publications.eta", {} as any, true),
-  // );
-  // eta.templates.define(
-  //   "reference",
-  //   eta.loadFile("./views/references.eta", {} as any, true),
-  // );
-  // eta.templates.define(
-  //   "skills",
-  //   eta.loadFile("./views/skills.eta", {} as any, true),
-  // );
-  // eta.templates.define(
-  //   "volunteer",
-  //   eta.loadFile("./views/volunteer.eta", {} as any, true),
-  // );
-  // eta.templates.define(
-  //   "work",
-  //   eta.loadFile("./views/work.eta", {} as any, true),
-  // );
+  eta.templates.define(
+    "interest",
+    eta.loadFile("./views/interests.eta", {} as any, true),
+  );
+  eta.templates.define(
+    "language",
+    eta.loadFile("./views/languages.eta", {} as any, true),
+  );
+  eta.templates.define(
+    "publication",
+    eta.loadFile("./views/publications.eta", {} as any, true),
+  );
+  eta.templates.define(
+    "reference",
+    eta.loadFile("./views/references.eta", {} as any, true),
+  );
+  eta.templates.define(
+    "skills",
+    eta.loadFile("./views/skills.eta", {} as any, true),
+  );
+  eta.templates.define(
+    "volunteer",
+    eta.loadFile("./views/volunteer.eta", {} as any, true),
+  );
+  eta.templates.define(
+    "work",
+    eta.loadFile("./views/work.eta", {} as any, true),
+  );
 
   return eta.render(tpl, {
     css: css,
@@ -57,12 +57,13 @@ export const render = (jsonResume: string): string | Promise<string> | void => {
       "award",
       "basic",
       "education",
-      // "interest",
-      // "language",
-      // "publication",
-      // "reference",
-      // "volunteer",
-      // "work",
+      "interest",
+      "language",
+      "publication",
+      "reference",
+      "skills",
+      "volunteer",
+      "work",
     ],
   });
 };

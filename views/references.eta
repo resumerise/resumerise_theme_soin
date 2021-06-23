@@ -1,21 +1,21 @@
 <section class="sheet" id="references">
-{{#ifIn "REFERENCE" @root.resume.settings.visibleCategories }}
-	<h2>{{@root.resume.settings.labels.reference.categoryTitle}}</h2>
-	{{#each resume.references}}
+<% if(it.resume.settings?.visibleCategories?.includes('REFERENCE')) { %>
+	<h2><%= it.resume.settings?.labels?.reference?.categoryTitle ? it.resume.settings.labels.reference.categoryTitle : '' %></h2>
+	<% it.resume?.references.forEach(function(reference) { %>
 	<div class="item content">
-		{{>nav categoryKey=@root.resume.settings.categoryKeys.reference id=id showDelete=true}}
-		<% if (reference) { %>
+		<% /* <%~ include('nav', {categoryKey: it.resume.settings.categoryKeys.reference, id: id, showDelete: true}) %>  */ %>
+		<% if (reference.reference) { %>
 		<blockquote class="reference">
-			<%= reference %>
+			<%= reference.reference %>
 		</blockquote>
 		<% } %>
-		<% if (name) { %>
+		<% if (reference.name) { %>
 		<div class="name">
-			— <%= name %>
+			— <%= reference.name %>
 		</div>
 		<% } %>
 	</div>
-	{{/each}}
-	{{>add categoryKey=@root.resume.settings.categoryKeys.reference}}
-{{/ifIn}}
+	<% }) %>
+	<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.reference}) %> */ %>
+<% } %>
 </section>
