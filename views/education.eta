@@ -1,55 +1,56 @@
 <section class="sheet" id="education">
-{{#ifIn "EDUCATION" @root.resume.settings.visibleCategories }}
-	<h2>{{@root.resume.settings.labels.education.categoryTitle}}</h2>
-	{{#each resume.education}}
+<% if(it.resume.settings?.visibleCategories?.includes('EDUCATION')) { %>
+	<h2><%= it.resume.settings?.labels?.education?.categoryTitle ? it.resume.settings.labels.education.categoryTitle : '' %></h2>
+	<% it.resume?.education.forEach(function(education) { %>
 	<div class="item content">
-		{{>nav categoryKey=@root.resume.settings.categoryKeys.skill id=id showDelete=true}}
+		<% /* <%~ include('nav', {categoryKey: it.resume.settings.categoryKeys.skill, id: id, showDelete: true}) %>  */ %>
 		<div class="date">
-			{{#if startDate}}
+			<% if(education.startDate) { %>
 			<span class="startDate">
-				{{startDate}}
+				{{education.startDate}}
 			</span>
-			{{/if}}
-			{{#if endDate}}
+			<% } %>
+			<% if(endDate) { %>
 			<span class="endDate">
-				- {{endDate}}
+				- <%= endDate %>
 			</span>
-			{{/if}}
-			{{#if present}}
+			<% } %>
+			<% if(present) { %>
 			<span class="endDate">
-				- {{resume.settings.general.present}}
+				- <%= resume.settings.general.present %>
 			</span>
-			{{/if}}
+			<% } %>
 		</div>
-		{{#if institution}}
+		<% if(education.institution) { %>
 		<div class="institution">
-			{{institution}}
+			<%= institution %>
 		</div>
-		{{/if}}
-		{{#if area}}
+		<% } %>
+		<% if(education.area) { %>
 		<div class="area">
-			{{area}}
+			<%= area %>
 		</div>
-		{{/if}}
-		{{#if studyType}}
+		<% } %>
+		<% if(education.studyType) { %>
 		<div class="studyType">
-			{{studyType}}
+			<%= studyType %>
 		</div>
-		{{/if}}
-		{{#if gpa}}
+		<% } %>
+		<% if(education.gpa) { %>
 		<div class="gpa">
-			{{@root.resume.settings.labels.education.gpa}}: {{gpa}}
+			<strong><%= resume.settings?.labels?.education?.gpa ? resume.settings?.labels?.education?.gpa : '' %></strong>
+			<%= gpa %>
 		</div>
-		{{/if}}
-		{{#if courses.length}}
+		<% } %>
+		<% if (education.courses.length) { %>
 		<ul class="courses">
-			{{#each courses}}
-			<li>{{.}}</li>
-			{{/each}}
+			<% it.resume?.education?.courses.forEach(function(course) { %>
+			<li><%= course %></li>
+			<% }) %>
 		</ul>
-		{{/if}}
+		<% } %>
 	</div>
-	{{/each}}
-	{{>add categoryKey=@root.resume.settings.categoryKeys.skill}}
-{{/ifIn}}
+	<% }) %>
+	<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.skill}) %> */ %>
+<% } %>
 </section>

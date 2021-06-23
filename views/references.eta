@@ -4,16 +4,16 @@
 	{{#each resume.references}}
 	<div class="item content">
 		{{>nav categoryKey=@root.resume.settings.categoryKeys.reference id=id showDelete=true}}
-		{{#if reference}}
+		<% if (reference) { %>
 		<blockquote class="reference">
-			{{reference}}
+			<%= reference %>
 		</blockquote>
-		{{/if}}
-		{{#if name}}
+		<% } %>
+		<% if (name) { %>
 		<div class="name">
-			— {{name}}
+			— <%= name %>
 		</div>
-		{{/if}}
+		<% } %>
 	</div>
 	{{/each}}
 	{{>add categoryKey=@root.resume.settings.categoryKeys.reference}}

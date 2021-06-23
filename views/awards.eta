@@ -1,9 +1,9 @@
 <section class="sheet" id="awards">
-<% if(it.resume.settings?.visibleCategories) { %>
-	<h2><%= it.resume.settings.labels.award.categoryTitle %></h2>
-	<% it.resume.awards.forEach(function(award) { %>
+<% if(it.resume.settings?.visibleCategories?.includes('AWARDS')) { %>
+	<h2><%= it.resume.settings?.labels?.award?.categoryTitle ? it.resume.settings.labels.award.categoryTitle : '' %></h2>
+	<% it.resume?.awards.forEach(function(award) { %>
 	<div class="item content">
-		<%~ include('nav', {categoryKey: it.resume.settings.categoryKeys.award, id: id, showDelete: true}) %>
+		<% /* <%~ include('nav', {categoryKey: it.resume.settings.categoryKeys.award, id: id, showDelete: true}) %>  */ %>
 		<% if(award.title) { %>
 		<div class="title">
 			<%= award.title %>
@@ -26,6 +26,6 @@
 		<% } %>
 	</div>
 	<% }) %>
-	<%~ include('add', {categoryKey: it.resume.settings.categoryKeys.award}) %>
+	<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.award}) %> */ %>
 <% } %>
 </section>

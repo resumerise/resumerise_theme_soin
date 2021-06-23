@@ -4,23 +4,23 @@
 	{{#each resume.skills}}
 	<div class="item content">
 		{{>nav categoryKey=@root.resume.settings.categoryKeys.skill id=id showDelete=true}}
-		{{#if name}}
+		<% if (name) { %>
 		<div class="name">
-			{{name}}
+			<%= name %>
 		</div>
-		{{/if}}
-		{{#if level}}
+		<% } %>
+		<% if (level) { %>
 		<div class="level">
-			<em>{{level}}</em>
+			<em><%= level %></em>
 		</div>
-		{{/if}}
+		<% } %>
 		{{#if keywords.length}}
 		<ul class="keywords">
 			{{#each keywords}}
 			<li>{{.}}</li>
 			{{/each}}
 		</ul>
-		{{/if}}
+		<% } %>
 	</div>
 	{{/each}}
 	{{>add categoryKey=@root.resume.settings.categoryKeys.skill}}

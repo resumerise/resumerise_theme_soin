@@ -11,7 +11,7 @@
 	<body class="<%= it.resume.settings?.mode ? it.resume.settings.mode : ''%>">
 		<div class="container">
 			<div id="resume">
-				<% it.categories.forEach(function(template){ %>
+				<% it.templates.forEach(function(template){ %>
 					<%~ include(template, {resume: it.resume}) %>
 				<% }) %>
 			</div>

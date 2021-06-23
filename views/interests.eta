@@ -4,18 +4,18 @@
 	{{#each resume.interests}}
 	<div class="item content">
 		{{>nav categoryKey=@root.resume.settings.categoryKeys.interest id=id showDelete=true}}
-		{{#if name}}
+		<% if(name) { %>
 		<div class="name">
-			{{name}}
+			<%= name %>
 		</div>
-		{{/if}}
+		<% } %>
 		{{#if keywords.length}}
 		<ul class="keywords">
 			{{#each keywords}}
 			<li>{{.}}</li>
 			{{/each}}
 		</ul>
-		{{/if}}
+		<% } %>
 	</div>
 	{{/each}}
 	{{>add categoryKey=@root.resume.settings.categoryKeys.interest}}
