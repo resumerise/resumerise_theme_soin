@@ -1,5 +1,5 @@
 <section class="sheet" id="awards">
-<% if(it.resume.settings.visibleCategories) { %>
+<% if(it.resume.settings?.visibleCategories) { %>
 	<h2><%= it.resume.settings.labels.award.categoryTitle %></h2>
 	<% it.resume.awards.forEach(function(award) { %>
 	<div class="item content">

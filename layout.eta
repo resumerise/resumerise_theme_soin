@@ -3,15 +3,17 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
-		<title>{{#resume.basics}}{{name}}{{/resume.basics}}</title>
+		<title><%= it.resume.basics?.name ? it.resume.basics.name : ''%></title>
 		<style>
-			{{{css}}}
+			<%= it.css %>
 		</style>
 	</head>
-	<body class="{{@root.resume.settings.mode}}">
+	<body class="<%= it.resume.settings?.mode ? it.resume.settings.mode : ''%>">
 		<div class="container">
 			<div id="resume">
-				<%~ it.body %>
+				<% it.categories.forEach(function(template){ %>
+					<%~ include(template, {resume: it.resume}) %>
+				<% }) %>
 			</div>
 		</div>
 	</body>
