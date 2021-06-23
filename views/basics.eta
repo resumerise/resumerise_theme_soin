@@ -15,7 +15,7 @@
     <% if(it.resume.basics.website) { %>
       <div class='website'>
         <strong>
-          <%= it.resume.settings?.labels?.basics.website ? it.resume.settings.labels.basics.website : '' %>
+          <%= it.resume.settings?.labels?.basics?.website ? it.resume.settings.labels.basics.website : '' %>
         </strong>
         <%= it.resume.basics.website %>
       </div>
@@ -23,7 +23,7 @@
     <% if(it.resume.basics.email) { %>
       <div class='email'>
         <strong>
-          <%= it.resume.settings?.labels?.basics.email ? it.resume.settings.labels.basics.email : '' %>
+          <%= it.resume.settings?.labels?.basics?.email ? it.resume.settings.labels.basics.email : '' %>
         </strong>
         <%= it.resume.basics.email %>
       </div>
@@ -31,7 +31,7 @@
     <% if(it.resume.basics.phone) { %>
       <div class='phone'>
         <strong>
-          <%= it.resume.settings?.labels?.basics.phone ? it.resume.settings.labels.basics.phone : '' %>
+          <%= it.resume.settings?.labels?.basics?.phone ? it.resume.settings.labels.basics.phone : '' %>
         </strong>
         <%= it.resume.basics.phone %>
       </div>
@@ -51,7 +51,7 @@
       <%~ include('nav', {categoryKey: it.resume.settings.categoryKeys.basic, id: id, showDelete: false}) %>
     <% } %>
     <h3>
-      <%= it.resume.settings?.labels?.categories.location ? it.resume.settings.labels.categories.location : '' %>
+      <%= it.resume.settings?.labels?.categories?.location ? it.resume.settings.labels.categories.location : '' %>
     </h3>
     <section class="sheet" id='location'>
       <% if(it.resume.basics.address) { %>
@@ -99,12 +99,12 @@
   <% } %>
   <% if(it.resume.settings?.visibleCategories?.includes('PROFILE')) { %>
   <div class="content">
-    /* <%~ include('nav', {categoryKey: it.resume.settings.categoryKeys.profiles}) %> */
+    <% /* <%~ include('nav', {categoryKey: it.resume.settings.categoryKeys.profiles}) %> */ %>
     <h3>
-      <%= it.resume.settings?.labels?.categories.profiles ? it.resume.settings.labels.categories.profiles : '' %>
+      <%= it.resume.settings?.labels?.categories?.profiles ? it.resume.settings.labels.categories.profiles : '' %>
     </h3>
     <section class="sheet" id='profiles'>
-      <% it.resume.basics.profiles.forEach(function(profile){ %>
+      <% it.resume.basics.profiles?.forEach(function(profile){ %>
         <div class='item'>
           <% if(profile.network) { %>
             <strong class='network'>
