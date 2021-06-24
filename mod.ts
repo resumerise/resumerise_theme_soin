@@ -1,69 +1,71 @@
-import * as path from "https://deno.land/std@0.97.0/path/mod.ts";
-import * as eta from "https://deno.land/x/eta@v1.6.0/mod.ts";
+import * as stdPath from 'https://deno.land/std@0.97.0/path/mod.ts';
+import * as eta from 'https://deno.land/x/eta@v1.6.0/mod.ts';
+import generate from 'https://x.nest.land/denoname@0.8.2/mod.ts';
+const { dirname } = generate(import.meta);
 
 eta.configure({
-  views: path.join("views"),
+  views: stdPath.join('views'),
 });
 
 export const render = (jsonResume: string): string | Promise<string> | void => {
-  var css = Deno.readTextFileSync("./style.css");
-  var layout = Deno.readTextFileSync("./layout.eta");
+  var css = Deno.readTextFileSync(`/${dirname}/style.css`);
+  var layout = Deno.readTextFileSync(`/${dirname}/layout.eta`);
 
   eta.templates.define(
-    "award",
-    eta.loadFile("./views/awards.eta", {} as any, true),
+    'award',
+    eta.loadFile(`/${dirname}/views/awards.eta`, {} as any, true),
   );
   eta.templates.define(
-    "basic",
-    eta.loadFile("./views/basics.eta", {} as any, true),
+    'basic',
+    eta.loadFile(`/${dirname}/views/basics.eta`, {} as any, true),
   );
   eta.templates.define(
-    "education",
-    eta.loadFile("./views/education.eta", {} as any, true),
+    'education',
+    eta.loadFile(`/${dirname}/views/education.eta`, {} as any, true),
   );
   eta.templates.define(
-    "interest",
-    eta.loadFile("./views/interests.eta", {} as any, true),
+    'interest',
+    eta.loadFile(`/${dirname}/views/interests.eta`, {} as any, true),
   );
   eta.templates.define(
-    "language",
-    eta.loadFile("./views/languages.eta", {} as any, true),
+    'language',
+    eta.loadFile(`/${dirname}/views/languages.eta`, {} as any, true),
   );
   eta.templates.define(
-    "publication",
-    eta.loadFile("./views/publications.eta", {} as any, true),
+    'publication',
+    eta.loadFile(`/${dirname}/views/publications.eta`, {} as any, true),
   );
   eta.templates.define(
-    "reference",
-    eta.loadFile("./views/references.eta", {} as any, true),
+    'reference',
+    eta.loadFile(`/${dirname}/views/references.eta`, {} as any, true),
   );
   eta.templates.define(
-    "skills",
-    eta.loadFile("./views/skills.eta", {} as any, true),
+    'skills',
+    eta.loadFile(`/${dirname}/views/skills.eta`, {} as any, true),
   );
   eta.templates.define(
-    "volunteer",
-    eta.loadFile("./views/volunteer.eta", {} as any, true),
+    'volunteer',
+    eta.loadFile(`/${dirname}/views/volunteer.eta`, {} as any, true),
   );
   eta.templates.define(
-    "work",
-    eta.loadFile("./views/work.eta", {} as any, true),
+    'work',
+    eta.loadFile(`/${dirname}/views/work.eta`, {} as any, true),
   );
 
   return eta.render(layout, {
     css: css,
     resume: JSON.parse(jsonResume),
     templates: [
-      "basic",
-      "award",
-      "education",
-      "interest",
-      "language",
-      "publication",
-      "reference",
-      "skills",
-      "volunteer",
-      "work",
+      'basic',
+      'award',
+      'education',
+      'interest',
+      'language',
+      'publication',
+      'reference',
+      'skills',
+      'volunteer',
+      'work',
     ],
   });
 };
