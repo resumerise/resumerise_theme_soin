@@ -8,7 +8,7 @@
 			<%= it.css %>
 		</style>
 	</head>
-	<body class="<%= it.resume.settings?.mode ? it.resume.settings.mode : ''%>">
+	<body class="<%= it.resume.settings?.mode ? it.resume.settings.mode : ''%><%= it.type ? it.type : ''%>">
 		<div class="container">
 			<div id="resume">
 				<% it.templates.forEach(function(template){ %>
