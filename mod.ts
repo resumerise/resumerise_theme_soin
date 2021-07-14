@@ -2,7 +2,7 @@ import * as stdPath from "https://deno.land/std@0.97.0/path/mod.ts";
 import * as eta from "https://deno.land/x/eta@v1.6.0/mod.ts";
 import generate from "https://x.nest.land/denoname@0.8.2/mod.ts";
 import { ResumeriseMeta } from "../resumerise-theme-library/schema";
-import { ThemeAction } from "../resumerise-theme-library/theme-action.ts";
+import { ThemeAction } from "../resumerise-theme-library/mod.ts";
 const { dirname } = generate(import.meta);
 
 eta.configure({

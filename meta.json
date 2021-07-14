@@ -5,6 +5,11 @@
         "responsive",
         "retro"
     ],
+    "platforms": [
+        "WEB",
+        "PRINT",
+        "MOBILE"
+    ],
     "colors": [
         "red",
         "blue"
