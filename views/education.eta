@@ -1,46 +1,68 @@
 <section class="sheet" id="education">
-<% if(it.resume.settings?.visibleCategories?.includes('EDUCATION')) { %>
-	<h2><%= it.resume.settings?.labels?.education?.categoryTitle ? it.resume.settings.labels.education.categoryTitle : '' %></h2>
+	<% if(it.resume.settings?.labels?.categoryProperty?.education?.categoryTitle) { %>
+		<h2>
+		<%= it.resume.settings.labels.categoryProperty.education.categoryTitle %>
+		</h2>
+	<% } %>
 	<% it.resume?.education.forEach(function(education) { %>
 	<div class="item content">
 		<% /* <%~ include('nav', {categoryKey: it.resume.settings.categoryKeys.skill, id: id, showDelete: true}) %>  */ %>
-		<div class="date">
-			<% if(education.startDate) { %>
-			<span class="startDate">
-				{{education.startDate}}
-			</span>
-			<% } %>
-			<% if(education.endDate) { %>
-			<span class="endDate">
-				- <%= education.endDate %>
-			</span>
-			<% } %>
-			<% if(education.present) { %>
-			<span class="endDate">
-				- <%= resume.settings?.general?.present %>
-			</span>
-			<% } %>
-		</div>
+		<%~ include('date-range', {
+			startDate: education.startDate,
+			endDate: education.endDate,
+			present: education.present,
+			settings: it.resume.settings
+		}) %>
+		<!-- institution -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.education?.institution) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.education.institution %>
+			</strong>
+		<% } %>
 		<% if(education.institution) { %>
 		<div class="institution">
 			<%= education.institution %>
 		</div>
+		<% } %>
+		<!-- area -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.education?.area) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.education.area %>
+			</strong>
 		<% } %>
 		<% if(education.area) { %>
 		<div class="area">
 			<%= education.area %>
 		</div>
 		<% } %>
+		<!-- studyType -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.education?.studyType) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.education.studyType %>
+			</strong>
+		<% } %>
 		<% if(education.studyType) { %>
 		<div class="studyType">
 			<%= education.studyType %>
 		</div>
+		<% } %>
+		<!-- gpa -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.education?.gpa) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.education.gpa %>
+			</strong>
 		<% } %>
 		<% if(education.gpa) { %>
 		<div class="gpa">
 			<strong><%= it.resume.settings?.labels?.education?.gpa ? resume.settings?.labels?.education?.gpa : '' %></strong>
 			<%= education.gpa %>
 		</div>
+		<!-- courses -->
+		<% } %>
+		<% if(it.resume.settings?.labels?.categoryProperty?.education?.courses) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.education.courses %>
+			</strong>
 		<% } %>
 		<% if (education.courses.length) { %>
 		<ul class="courses">
@@ -52,5 +74,4 @@
 	</div>
 	<% }) %>
 	<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.skill}) %> */ %>
-<% } %>
 </section>

@@ -1,6 +1,7 @@
 <section class="sheet" id="work">
-<% if(it.resume.settings?.visibleCategories?.includes('WORK')) { %>
-	<h2><%= it.resume.settings?.labels?.work?.categoryTitle ? it.resume.settings.labels.work.categoryTitle : '' %></h2>
+	<% if (it.resume.settings?.labels?.categoryProperty?.work?.categoryTitle) { %>
+	<h2><%= it.resume.settings?.labels?.categoryProperty?.work?.categoryTitle %></h2>
+	<% } %>
 	<% it.resume?.work.forEach(function(work) { %>
 	<div class="item content">
 		<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.work}) %> */ %>
@@ -9,37 +10,50 @@
 			<%= work.company %>
 		</h3>
 		<% } %>
-		<div class="date">
-			<% if (work.startDate) { %>
-			<span class="startDate">
-				<%= work.startDate %>
-			</span>
-			<% } %>
-			<% if (work.endDate) { %>
-			<span class="endDate">
-				- <%= work.endDate %>
-			</span>
-			<% } %>
-			<% if (work.present) { %>
-			<span class="endDate">
-				- <%= it.resume.settings?.general?.present %>
-			</span>
-			<% } %>
-		</div>
+		<%~ include('date-range', {
+			startDate: work.startDate,
+			endDate: work.endDate,
+			present: work.present,
+			settings: it.resume.settings
+		}) %>
+		<!-- position -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.work?.position) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.work.position %>
+			</strong>
+		<% } %>
 		<% if (work.position) { %>
 		<div class="position">
 			<%= work.position %>
 		</div>
+		<% } %>
+		<!-- website -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.work?.website) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.work.website %>
+			</strong>
 		<% } %>
 		<% if (work.website) { %>
 		<div class="website">
 			<a href="<%= work.website %>"><%= work.website %></a>
 		</div>
 		<% } %>
+		<!-- summary -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.work?.summary) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.work.summary %>
+			</strong>
+		<% } %>
 		<% if (work.summary) { %>
 		<div class="summary">
 			<p><%= work.summary %></p>
 		</div>
+		<% } %>
+		<!-- highlights -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.work?.highlights) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.work.highlights %>
+			</strong>
 		<% } %>
 		<% if (work.highlights?.length) { %>
 		<ul class="highlights">
@@ -51,5 +65,4 @@
 	</div>
 	<% }) %>
 	<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.work}) %> */ %>
-<% } %>
 </section>

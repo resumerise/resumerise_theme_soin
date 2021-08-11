@@ -1,28 +1,61 @@
 <section class="sheet" id="publications">
-<% if(it.resume.settings?.visibleCategories?.includes('PUBLICATION')) { %>
-	<h2><%= it.resume.settings?.labels?.publication?.categoryTitle ? it.resume.settings.labels.publication.categoryTitle : '' %></h2>
+	<% if(it.resume.settings?.labels?.categoryProperty?.publication?.categoryTitle) { %>
+		<h2>
+		<%= it.resume.settings.labels.categoryProperty.publication.categoryTitle %>
+		</h2>
+	<% } %>
 	<% it.resume?.publications.forEach(function(publication) { %>
 	<div class="item content">
 		<% /* <%~ include('nav', {categoryKey: it.resume.settings.categoryKeys.publication, id: id, showDelete: true}) %>  */ %>
+		<!-- name -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.publication?.name) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.publication.name %>
+			</strong>
+		<% } %>
 		<% if (publication.name) { %>
 		<div class="name">
 			<%= publication.name %>
 		</div>
+		<% } %>
+		<!-- publisher -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.publication?.publisher) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.publication.publisher %>
+			</strong>
 		<% } %>
 		<% if (publication.publisher) { %>
 		<div class="publisher">
 			<%= publication.publisher %>
 		</div>
 		<% } %>
+		<!-- releaseDate -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.publication?.releaseDate) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.publication.releaseDate %>
+			</strong>
+		<% } %>
 		<% if (publication.releaseDate) { %>
 		<div class="releaseDate">
 			<%= publication.releaseDate %>
 		</div>
 		<% } %>
+		<!-- website -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.publication?.website) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.publication.website %>
+			</strong>
+		<% } %>
 		<% if (publication.website) { %>
 		<div class="website">
 			<a href="<%= publication.website %>">Link</a>
 		</div>
+		<% } %>
+		<!-- summary -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.publication?.summary) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.publication.summary %>
+			</strong>
 		<% } %>
 		<% if (publication.summary) { %>
 		<div class="summary">
@@ -32,5 +65,4 @@
 	</div>
 	<% }) %>
 	<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.publication}) %> */ %>
-<% } %>
 </section>

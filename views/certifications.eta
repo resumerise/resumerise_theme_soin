@@ -1,0 +1,39 @@
+<section class="sheet" id="certifications">
+	<% if (it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle) { %>
+	<h2><%= it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle %></h2>
+	<% } %>
+	<% it.resume?.certifications.forEach(function(certificate) { %>
+	<div class="item content">
+		<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.work}) %> */ %>
+		<!-- issueDate -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.certificate?.issueDate) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.certificate.issueDate %>
+			</strong>
+		<% } %>
+		<% if (certificate.issueDate) { %>
+		<div class="issueDate">
+			<%= certificate.issueDate %>
+		</div>
+		<% } %>
+		<!-- issuer -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.certificate?.issuer) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.certificate.issuer %>
+			</strong>
+		<% } %>
+		<% if (certificate.issuer) { %>
+		<div class="issuer">
+			<a href="<%= certificate.issuer %>"><%= certificate.issuer %></a>
+		</div>
+		<% } %>
+		<!-- title -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.certificate?.title) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.certificate.title %>
+			</strong>
+		<% } %>
+	</div>
+	<% }) %>
+	<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.work}) %> */ %>
+</section>

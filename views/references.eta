@@ -1,13 +1,28 @@
 <section class="sheet" id="references">
-<% if(it.resume.settings?.visibleCategories?.includes('REFERENCE')) { %>
-	<h2><%= it.resume.settings?.labels?.reference?.categoryTitle ? it.resume.settings.labels.reference.categoryTitle : '' %></h2>
+	<% if(it.resume.settings?.labels?.categoryProperty?.reference?.categoryTitle) { %>
+		<h2>
+		<%= it.resume.settings.labels.categoryProperty.reference.categoryTitle %>
+		</h2>
+	<% } %>
 	<% it.resume?.references.forEach(function(reference) { %>
 	<div class="item content">
 		<% /* <%~ include('nav', {categoryKey: it.resume.settings.categoryKeys.reference, id: id, showDelete: true}) %>  */ %>
+		<!-- reference -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.reference?.reference) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.reference.reference %>
+			</strong>
+		<% } %>
 		<% if (reference.reference) { %>
 		<blockquote class="reference">
 			<%= reference.reference %>
 		</blockquote>
+		<% } %>
+		<!-- name -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.reference?.name) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.reference.name %>
+			</strong>
 		<% } %>
 		<% if (reference.name) { %>
 		<div class="name">
@@ -17,5 +32,4 @@
 	</div>
 	<% }) %>
 	<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.reference}) %> */ %>
-<% } %>
 </section>

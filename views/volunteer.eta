@@ -1,45 +1,67 @@
 <section class="sheet" id="volunteer">
-<% if(it.resume.settings?.visibleCategories?.includes('VOLUNTEER')) { %>
-	<h2><%= it.resume.settings?.labels?.volunteer?.categoryTitle ? it.resume.settings.labels.volunteer.categoryTitle : '' %></h2>
+	<% if(it.resume.settings?.labels?.categoryProperty?.volunteer?.categoryTitle) { %>
+		<h2>
+		<%= it.resume.settings.labels.categoryProperty.volunteer.categoryTitle %>
+		</h2>
+	<% } %>
 	<% it.resume?.volunteer.forEach(function(volunteer) { %>
 	<div class="item content">
 		<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.volunteer}) %> */ %>
-		<% if (volunteer.organization) { %>
-		<h3 class="company">
-			<%= volunteer.organization %>
-		</h3>
+		<!-- organization -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.volunteer?.organization) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.volunteer.organization %>
+			</strong>
 		<% } %>
-		<div class="date">
-			<% if (volunteer.startDate) { %>
-			<span class="startDate">
-				<%= volunteer.startDate %>
-			</span>
-			<% } %>
-			<% if (volunteer.endDate) { %>
-			<span class="endDate">
-				- <%= volunteer.endDate %>
-			</span>
-			<% } %>
-			<% if (volunteer.present) { %>
-			<span class="endDate">
-				- <%= it.resume.settings?.general?.present %>
-			</span>
-			<% } %>
+		<% if (volunteer.organization) { %>
+		<div class="company">
+			<%= volunteer.organization %>
 		</div>
+		<% } %>
+		<%~ include('date-range', {
+			startDate: volunteer.startDate,
+			endDate: volunteer.endDate,
+			present: volunteer.present,
+			settings: it.resume.settings
+		}) %>
+		<!-- position -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.volunteer?.position) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.volunteer.position %>
+			</strong>
+		<% } %>
 		<% if (volunteer.position) { %>
 		<div class="position">
 			<%= volunteer.position %>
 		</div>
+		<% } %>
+		<!-- website -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.volunteer?.website) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.volunteer.website %>
+			</strong>
 		<% } %>
 		<% if (volunteer.website) { %>
 		<div class="website">
 			<a href="<%= volunteer.website %>"><%= volunteer.website %></a>
 		</div>
 		<% } %>
+		<!-- summary -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.volunteer?.summary) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.volunteer.summary %>
+			</strong>
+		<% } %>
 		<% if (volunteer.summary) { %>
 		<div class="summary">
 			<p><%= volunteer.summary %></p>
 		</div>
+		<% } %>
+		<!-- highlights -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.volunteer?.highlights) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.volunteer.highlights %>
+			</strong>
 		<% } %>
 		<% if (volunteer.highlights?.length) { %>
 		<ul class="highlights">
@@ -51,5 +73,4 @@
 	</div>
 	<% }) %>
 	<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.volunteer}) %> */ %>
-<% } %>
 </section>

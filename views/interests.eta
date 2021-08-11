@@ -1,13 +1,28 @@
 <section class="sheet" id="interests">
-<% if(it.resume.settings?.visibleCategories?.includes('INTEREST')) { %>
-	<h2><%= it.resume.settings?.labels?.interest?.categoryTitle ? it.resume.settings.labels.interest.categoryTitle : '' %></h2>
+	<% if(it.resume.settings?.labels?.categoryProperty?.interest?.categoryTitle) { %>
+		<h2>
+		<%= it.resume.settings.labels.categoryProperty.interest.categoryTitle %>
+		</h2>
+	<% } %>
 	<% it.resume?.interests.forEach(function(interest) { %>
 	<div class="item content">
 		<% /* {{>nav categoryKey=@root.resume.settings.categoryKeys.interest id=id showDelete=true}} */ %>
+		<!-- name -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.interest?.name) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.interest.name %>
+			</strong>
+		<% } %>
 		<% if(interest.name) { %>
 		<div class="name">
 			<%= interest.name %>
 		</div>
+		<% } %>
+		<!-- keywords -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.interest?.keywords) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.interest.keywords %>
+			</strong>
 		<% } %>
 		<% if(interest.keywords.length) { %>
 		<ul class="keywords">
@@ -19,5 +34,4 @@
 	</div>
 	<% }) %>
 	<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.interest}) %> */ %>
-<% } %>
 </section>

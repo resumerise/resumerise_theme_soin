@@ -1,28 +1,48 @@
 <section class="sheet" id="skills">
-<% if(it.resume.settings?.visibleCategories?.includes('SKILL')) { %>
-	<h2><%= it.resume.settings?.labels?.skill?.categoryTitle ? it.resume.settings.labels.skill.categoryTitle : '' %></h2>
+	<% if(it.resume.settings?.labels?.categoryProperty?.skill?.categoryTitle) { %>
+		<h2>
+		<%= it.resume.settings.labels.categoryProperty.skill.categoryTitle %>
+		</h2>
+	<% } %>
 	<% it.resume?.skills.forEach(function(skill) { %>
 	<div class="item content">
 		<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.skill}) %> */ %>
+		<!-- name -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.skill?.name) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.skill.name %>
+			</strong>
+		<% } %>
 		<% if (skill.name) { %>
 		<div class="name">
 			<%= skill.name %>
 		</div>
+		<% } %>
+		<!-- level -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.skill?.level) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.skill.level %>
+			</strong>
 		<% } %>
 		<% if (skill.level) { %>
 		<div class="level">
 			<em><%= skill.level %></em>
 		</div>
 		<% } %>
+		<!-- keywords -->
+		<% if(it.resume.settings?.labels?.categoryProperty?.skill?.keywords) { %>
+			<strong>
+			<%= it.resume.settings.labels.categoryProperty.skill.keywords %>
+			</strong>
+		<% } %>
 		<% if (skill.keywords.length) { %>
 		<ul class="keywords">
 			<% skill.keywords.forEach(function(keyword) { %>
-			<li><% keyword %></li>
+			<li><%= keyword %></li>
 			<% }) %>
 		</ul>
 		<% } %>
 	</div>
 	<% }) %>
 	<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.skill}) %> */ %>
-<% } %>
 </section>

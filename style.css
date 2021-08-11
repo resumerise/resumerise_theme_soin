@@ -1,10 +1,28 @@
 body {
 	background: #fff;
 	font: 15px Arial, Helvetica, sans-serif;
-	line-height: 1.4;
-	margin: 50px 0;
-	margin-bottom: 100px;
 }
+
+@media print {
+    body  {
+        width: 21cm;
+        height: 29.7cm;
+        margin: 27mm 16mm 27mm 16mm;
+   } 
+}
+
+@media screen {
+	body {
+		line-height: 1.4;
+		margin: 50px 0;
+		margin-bottom: 100px;
+	}
+}
+
+.container {
+	text-align: left;
+}
+
 em {
 	color: #999;
 }
@@ -23,11 +41,6 @@ blockquote {
 }
 .item {
 	margin-bottom: 1em;
-}
-#resume {
-	margin: 0 auto;
-	max-width: 480px;
-	padding: 0 20px;
 }
 #basics {
 	margin-bottom: -10px;

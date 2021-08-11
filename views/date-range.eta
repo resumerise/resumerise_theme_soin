@@ -1,0 +1,17 @@
+<div class="date">
+    <% if(it.startDate) { %>
+    <span class="startDate">
+        <%= it.startDate %>
+    </span>
+    <% } %>
+    <% if(it.endDate) { %>
+    <span class="endDate">
+        - <%= it.endDate %>
+    </span>
+    <% } %>
+    <% if(it.present) { %>
+    <span class="endDate">
+        - <%= it.settings?.general?.present %>
+    </span>
+    <% } %>
+</div>
