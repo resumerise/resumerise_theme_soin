@@ -1,52 +1,32 @@
-<section class="sheet" id="awards">
+<section id="awards">
 	<% if(it.resume.settings?.labels?.categoryProperty?.award?.categoryTitle) { %>
 		<h2>
-		<%= it.resume.settings.labels.categoryProperty.award.categoryTitle %>
+			<%= it.resume.settings.labels.categoryProperty.award.categoryTitle %>
 		</h2>
 	<% } %>
 	<% it.resume?.awards.forEach(function(award) { %>
 	<div class="item content">
 		<% /* <%~ include('nav', {categoryKey: it.resume.settings.categoryKeys.award, id: id, showDelete: true}) %>  */ %>
-		<% if(award.title) { %>
-		<% if(it.resume.settings?.labels?.categoryProperty?.award?.title) { %>
-			<strong>
-			<%= it.resume.settings.labels.categoryProperty.award.title %>
-			</strong>
-		<% } %>
-		<div class="title">
-			<%= award.title %>
-		</div>
-		<% } %>
-		<% if(it.resume.settings?.labels?.categoryProperty?.award?.date) { %>
-			<strong>
-			<%= it.resume.settings.labels.categoryProperty.award.date %>
-			</strong>
-		<% } %>
-		<% if(award.date) { %>
-		<div class="date">
-			<%= award.date %>
-		</div>
-		<% } %>
-		<% if(it.resume.settings?.labels?.categoryProperty?.award?.awarder) { %>
-			<strong>
-			<%= it.resume.settings.labels.categoryProperty.award.awarder %>
-			</strong>
-		<% } %>
-		<% if(award.awarder) { %>
-		<div class="awarder">
-			<%= award.awarder %>
-		</div>
-		<% } %>
-		<% if(it.resume.settings?.labels?.categoryProperty?.award?.summary) { %>
-			<strong>
-			<%= it.resume.settings.labels.categoryProperty.award.summary %>
-			</strong>
-		<% } %>
-		<% if(award.summary) { %>
-		<div class="summary">
-			<p><%= award.summary %></p>
-		</div>
-		<% } %>
+		<%~ include('key-value-item', {
+			label: it.resume.settings?.labels?.categoryProperty?.award?.title, 
+			value: award.title,
+			id: 'award-title',
+		}) %>
+		<%~ include('key-value-item', {
+			label: it.resume.settings?.labels?.categoryProperty?.award?.date, 
+			value: it.formatDate(award.date, it.resume.settings),
+			id: 'award-date',
+		}) %>
+		<%~ include('key-value-item', {
+			label: it.resume.settings?.labels?.categoryProperty?.award?.awarder, 
+			value: award.awarder,
+			id: 'award-awarder',
+		}) %>
+		<%~ include('key-value-item', {
+			label: it.resume.settings?.labels?.categoryProperty?.award?.summary, 
+			value: award.summary,
+			id: 'award-summary',
+		}) %>
 	</div>
 	<% }) %>
 	<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.award}) %> */ %>

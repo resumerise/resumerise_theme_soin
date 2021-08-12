@@ -1,37 +1,23 @@
-<section class="sheet" id="interests">
-	<% if(it.resume.settings?.labels?.categoryProperty?.interest?.categoryTitle) { %>
-		<h2>
+<section id="interests">
+<% if(it.resume.settings?.labels?.categoryProperty?.interest?.categoryTitle) { %>
+	<h2>
 		<%= it.resume.settings.labels.categoryProperty.interest.categoryTitle %>
-		</h2>
-	<% } %>
-	<% it.resume?.interests.forEach(function(interest) { %>
+	</h2>
+<% } %>
+<% it.resume?.interests.forEach(function(interest) { %>
 	<div class="item content">
-		<% /* {{>nav categoryKey=@root.resume.settings.categoryKeys.interest id=id showDelete=true}} */ %>
-		<!-- name -->
-		<% if(it.resume.settings?.labels?.categoryProperty?.interest?.name) { %>
-			<strong>
-			<%= it.resume.settings.labels.categoryProperty.interest.name %>
-			</strong>
-		<% } %>
-		<% if(interest.name) { %>
-		<div class="name">
-			<%= interest.name %>
-		</div>
-		<% } %>
-		<!-- keywords -->
-		<% if(it.resume.settings?.labels?.categoryProperty?.interest?.keywords) { %>
-			<strong>
-			<%= it.resume.settings.labels.categoryProperty.interest.keywords %>
-			</strong>
-		<% } %>
-		<% if(interest.keywords.length) { %>
-		<ul class="keywords">
-			<% interest.keywords.forEach(function(keyword) { %>
-			<li><%= keyword %></li>
-			<% }) %>
-		</ul>
-		<% } %>
+	<% /* {{>nav categoryKey=@root.resume.settings.categoryKeys.interest id=id showDelete=true}} */ %>
+	<%~ include('key-value-item', {
+		label: it.resume.settings?.labels?.categoryProperty?.interest?.name, 
+		value: interest.name,
+		id: 'interest-name',
+	}) %>
+	<%~ include('list', {
+		label: it.resume.settings?.labels?.categoryProperty?.interest?.keywords, 
+		data: interest.keywords,
+		id: 'interest-keywords',
+	}) %>
 	</div>
-	<% }) %>
-	<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.interest}) %> */ %>
+<% }) %>
+<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.interest}) %> */ %>
 </section>

@@ -1,99 +1,51 @@
-<section class="sheet" id="project">
+<section id="project">
 	<% if (it.resume.settings?.labels?.categoryProperty?.project?.categoryTitle) { %>
 	<h2><%= it.resume.settings?.labels?.categoryProperty?.project?.categoryTitle %></h2>
 	<% } %>
 	<% it.resume?.projects.forEach(function(project) { %>
 	<div class="item content">
-		<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.project}) %> */ %>
-		<!-- title -->
-		<% if(it.resume.settings?.labels?.categoryProperty?.project?.title) { %>
-			<strong>
-			<%= it.resume.settings.labels.categoryProperty.project.title %>
-			</strong>
-		<% } %>
-		<% if (project.title) { %>
-		<div class="title">
-			<%= project.title %>
-		</div>
-		<% } %>
-		<!-- client -->
-		<% if(it.resume.settings?.labels?.categoryProperty?.project?.client) { %>
-			<strong>
-			<%= it.resume.settings.labels.categoryProperty.project.client %>
-			</strong>
-		<% } %>
-		<% if (project.client) { %>
-		<div class="name">
-			<%= project.client %>
-		</div>
-		<% } %>
+		<%~ include('key-value-item', {
+            label: it.resume.settings?.labels?.categoryProperty?.project?.title, 
+            value: project.title,
+            id: 'project-title',
+        }) %>
+		<%~ include('key-value-item', {
+            label: it.resume.settings?.labels?.categoryProperty?.project?.client, 
+            value: project.client,
+            id: 'project-client',
+        }) %>
 		<%~ include('date-range', {
+			formatDate: it.formatDate,
 			startDate: project.startDate,
 			endDate: project.endDate,
 			present: project.present,
 			settings: it.resume.settings
 		}) %>
-		<!-- summary -->
-		<% if(it.resume.settings?.labels?.categoryProperty?.project?.summary) { %>
-			<strong>
-			<%= it.resume.settings.labels.categoryProperty.project.summary %>
-			</strong>
-		<% } %>
-		<% if (project.summary) { %>
-		<div class="summary">
-			<%= project.summary %>
-		</div>
-		<% } %>
-		<!-- website -->
-		<% if(it.resume.settings?.labels?.categoryProperty?.project?.website) { %>
-			<strong>
-			<%= it.resume.settings.labels.categoryProperty.project.website %>
-			</strong>
-		<% } %>
-		<% if (project.website) { %>
-		<div class="website">
-			<a href="<%= project.website %>"><%= project.website %></a>
-		</div>
-		<% } %>
-		<!-- highlights -->
-		<% if(it.resume.settings?.labels?.categoryProperty?.project?.highlights) { %>
-			<strong>
-			<%= it.resume.settings.labels.categoryProperty.project.highlights %>
-			</strong>
-		<% } %>
-		<% if (project.highlights?.length) { %>
-		<ul class="highlights">
-			<% project.highlights.forEach(function(highlight) { %>
-			<li><%= highlight %></li>
-			<% }) %>
-		</ul>
-		<% } %>
-		<!-- products -->
-		<% if(it.resume.settings?.labels?.categoryProperty?.project?.products) { %>
-			<strong>
-			<%= it.resume.settings.labels.categoryProperty.project.products %>
-			</strong>
-		<% } %>
-		<% if (project.products?.length) { %>
-		<ul class="product">
-			<% project.products.forEach(function(product) { %>
-			<li><%= product %></li>
-			<% }) %>
-		</ul>
-		<% } %>
-		<!-- roles -->
-		<% if(it.resume.settings?.labels?.categoryProperty?.project?.roles) { %>
-			<strong>
-			<%= it.resume.settings.labels.categoryProperty.project.roles %>
-			</strong>
-		<% } %>
-		<% if (project.roles?.length) { %>
-		<ul class="product">
-			<% project.roles.forEach(function(role) { %>
-			<li><%= role %></li>
-			<% }) %>
-		</ul>
-		<% } %>
+		<%~ include('key-value-item', {
+            label: it.resume.settings?.labels?.categoryProperty?.project?.summary, 
+            value: project.summary,
+            id: 'project-summary',
+        }) %>
+		<%~ include('key-value-item', {
+            label: it.resume.settings?.labels?.categoryProperty?.project?.website, 
+            value: project.website,
+            id: 'project-website',
+        }) %>
+		<%~ include('list', {
+			label: it.resume.settings?.labels?.categoryProperty?.project?.products, 
+			data: project.products,
+			id: 'project-products',
+		}) %>
+		<%~ include('list', {
+			label: it.resume.settings?.labels?.categoryProperty?.project?.roles, 
+			data: project.roles,
+			id: 'project-roles',
+		}) %>
+		<%~ include('list', {
+			label: it.resume.settings?.labels?.categoryProperty?.project?.highlights, 
+			data: project.highlights,
+			id: 'project-highlights',
+		}) %>
 	</div>
 	<% }) %>
 	<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.work}) %> */ %>

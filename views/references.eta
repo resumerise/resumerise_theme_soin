@@ -1,4 +1,4 @@
-<section class="sheet" id="references">
+<section id="references">
 	<% if(it.resume.settings?.labels?.categoryProperty?.reference?.categoryTitle) { %>
 		<h2>
 		<%= it.resume.settings.labels.categoryProperty.reference.categoryTitle %>
@@ -7,28 +7,16 @@
 	<% it.resume?.references.forEach(function(reference) { %>
 	<div class="item content">
 		<% /* <%~ include('nav', {categoryKey: it.resume.settings.categoryKeys.reference, id: id, showDelete: true}) %>  */ %>
-		<!-- reference -->
-		<% if(it.resume.settings?.labels?.categoryProperty?.reference?.reference) { %>
-			<strong>
-			<%= it.resume.settings.labels.categoryProperty.reference.reference %>
-			</strong>
-		<% } %>
-		<% if (reference.reference) { %>
-		<blockquote class="reference">
-			<%= reference.reference %>
-		</blockquote>
-		<% } %>
-		<!-- name -->
-		<% if(it.resume.settings?.labels?.categoryProperty?.reference?.name) { %>
-			<strong>
-			<%= it.resume.settings.labels.categoryProperty.reference.name %>
-			</strong>
-		<% } %>
-		<% if (reference.name) { %>
-		<div class="name">
-			— <%= reference.name %>
-		</div>
-		<% } %>
+		<%~ include('key-value-item', {
+            label: it.resume.settings?.labels?.categoryProperty?.reference?.reference, 
+            value: reference.reference,
+            id: 'reference-reference',
+        }) %>
+		<%~ include('key-value-item', {
+            label: it.resume.settings?.labels?.categoryProperty?.reference?.name, 
+            value: reference.name,
+            id: 'reference-name',
+        }) %>
 	</div>
 	<% }) %>
 	<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.reference}) %> */ %>

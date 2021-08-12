@@ -1,112 +1,31 @@
-<section class="sheet" id='basics'>
-  <div class="content">
-  <% if (it.resume.settings?.categoryKeys?.basic) { %>
-    <%~ include('nav', {categoryKey: it.resume.settings.categoryKeys.basic, id: id, showDelete: false}) %>
-  <% } %>
-  <% if(it.resume.basics.name) { %>
-    <h1>
-      <%= it.resume.basics.name %>
-    </h1>
-  <% } %>
-  <h2>
-    <%= it.resume.basics.label ? it.resume.basics.label : '' %>
-  </h2>
-  <div class='contact'>
-    <% if(it.resume.basics.website) { %>
-      <div class='website'>
-        <strong>
-          <%= it.resume.settings?.labels?.basics?.website ? it.resume.settings.labels.basics.website : '' %>
-        </strong>
-        <%= it.resume.basics.website %>
-      </div>
-    <% } %>
-    <% if(it.resume.basics.email) { %>
-      <div class='email'>
-        <strong>
-          <%= it.resume.settings?.labels?.basics?.email ? it.resume.settings.labels.basics.email : '' %>
-        </strong>
-        <%= it.resume.basics.email %>
-      </div>
-    <% } %>
-    <% if(it.resume.basics.phone) { %>
-      <div class='phone'>
-        <strong>
-          <%= it.resume.settings?.labels?.basics?.phone ? it.resume.settings.labels.basics.phone : '' %>
-        </strong>
-        <%= it.resume.basics.phone %>
-      </div>
-    <% } %>
-  </div>
-  <% if(it.resume.basics.summary) { %>
-    <div class='summary'>
-      <p>
-        <%= it.resume.basics.summary %>
-      </p>
+<section id='basics'>
+<%~ include('profile-picture', {
+    picture: it.resume.basics.picture
+}) %>
+<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.work}) %> */ %>
+<% if (it.resume.settings?.labels?.categoryProperty?.basics?.categoryTitle) { %>
+    <h2><%= it.resume.settings.labels.categoryProperty.basics.categoryTitle %></h2>
+<% } %>
+    <div class="content">
+        <%~ include('key-value-item', {
+            label: it.resume.settings?.labels?.categoryProperty?.basics?.website, 
+            value: it.resume.basics.website,
+            id: 'basics-website',
+        }) %>
+        <%~ include('key-value-item', {
+            label: it.resume.settings?.labels?.categoryProperty?.basics?.email, 
+            value: it.resume.basics.email,
+            id: 'basics-email',
+        }) %>
+        <%~ include('key-value-item', {
+            label: it.resume.settings?.labels?.categoryProperty?.basics?.phone, 
+            value: it.resume.basics.phone,
+            id: 'basics-phone',
+        }) %>
+        <%~ include('key-value-item', {
+            label: it.resume.settings?.labels?.categoryProperty?.basics?.summary, 
+            value: it.resume.basics.summary,
+            id: 'basics-summary',
+        }) %>
     </div>
-  <% } %>
-  </div>
-  <% if(it.resume.basics.location) { %>
-  <div class="content">
-    <% if (it.resume.settings?.categoryKeys?.basic) { %>
-      <%~ include('nav', {categoryKey: it.resume.settings.categoryKeys.basic, id: id, showDelete: false}) %>
-    <% } %>
-    <h3>
-      <%= it.resume.settings?.labels?.categories?.location ? it.resume.settings.labels.categories.location : '' %>
-    </h3>
-    <% if(it.resume.basics.location) { %>
-      <section class="sheet" id='location'>
-        <% if(it.resume.basics?.location?.address) { %>
-          <div class='address'>
-            <% if(it.resume.settings?.labels?.categoryProperty?.location?.address) { %>
-              <strong>
-                <%= it.resume.settings.labels.categoryProperty.location.address %>
-              </strong>
-            <% } %>
-            <%= it.resume.basics.location.address %>
-          </div>
-        <% } %>
-        <% if(it.resume.basics?.location?.postalCode) { %>
-          <div class='postalCode'>
-            <% if(it.resume.settings?.labels?.categoryProperty?.location?.postalCode) { %>
-              <strong>
-                <%= it.resume.settings.labels.categoryProperty.location.postalCode %>
-              </strong>
-            <% } %>
-            <%= it.resume.basics.location.postalCode %>
-          </div>
-        <% } %>
-        <% if(it.resume.basics?.location?.city) { %>
-          <div class='city'>
-            <% if(it.resume.settings?.labels?.categoryProperty?.location?.city) { %>
-              <strong>
-                <%= it.resume.settings.labels.categoryProperty.location.city %>
-              </strong>
-            <% } %>
-            <%= it.resume.basics.location.city %>
-          </div>
-        <% } %>
-        <% if(it.resume.basics?.location?.countryCode) { %>
-          <div class='countryCode'>
-            <% if(it.resume.settings?.labels?.categoryProperty?.location?.countryCode) { %>
-              <strong>
-                <%= it.resume.settings.labels.categoryProperty.location.countryCode %>
-              </strong>
-            <% } %>
-            <%= it.resume.basics.location.countryCode %>
-          </div>
-        <% } %>
-        <% if(it.resume.basics?.location?.region) { %>
-          <div class='region'>
-            <% if(it.resume.settings?.labels?.categoryProperty?.location?.region) { %>
-              <strong>
-                <%= it.resume.settings.labels.categoryProperty.location.region %>
-              </strong>
-            <% } %>
-            <%= it.resume.basics.location.region %>
-          </div>
-        <% } %>
-      </section>
-    <% } %>
-  </div>
-  <% } %>
 </section>

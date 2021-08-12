@@ -1,0 +1,5 @@
+<% if(it.picture) { %>
+    <div class='picture'>
+        <img src="<%= it.picture %>">
+    </div>
+<% } %>

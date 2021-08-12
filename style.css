@@ -1,3 +1,4 @@
+/* layout */
 body {
 	background: #fff;
 	font: 15px Arial, Helvetica, sans-serif;
@@ -19,6 +20,7 @@ body {
 	}
 }
 
+/* common */
 .container {
 	text-align: left;
 }
@@ -29,42 +31,107 @@ em {
 p {
 	line-height: 1.4;
 }
+
 ul {
-	margin-bottom: 0;
+	margin: 0;
 }
+
+h2 {
+	padding: 0;
+	margin-top: 0;
+	margin-bottom: 1em;
+}
+
 section {
 	margin-bottom: 2em;
 }
+
 blockquote {
 	margin: 0;
 	margin-bottom: 1em;
 }
+
 .item {
 	margin-bottom: 1em;
 }
-#basics {
-	margin-bottom: -10px;
-}
-#basics h3 {
-	margin-top: 1.5em;
-}
-#basics .contact strong,
-#location strong {
-	clear: both;
-	float: left;
-	line-height: 1.3;
-	width: 120px;
-}
-#profiles,
-#skills {
-	overflow: hidden;
-}
-#profiles .item,
-#skills .item {
-	float: left;
-	width: 50%;
+
+.key-value-item {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: flex-start;
+	margin-bottom: 5px;
 }
 
+.key-value-item label, 
+.key-list-item label {
+	white-space: nowrap;
+	color: gainsboro;
+	margin-right: 5px;
+}
+
+.key-value-item span {
+	white-space: normal;
+}
+
+.content {
+	position: relative;
+}
+
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	stroke-width: 0;
+}
+
+.content:hover .item-nav {
+	display: flex;
+	flex-direction: column;
+	background-color: aliceblue;
+}
+
+.content:hover {
+	background-color: aliceblue;
+	-webkit-transition: all 0.2s 0s ease, all 0.2s 0s ease;
+	-moz-transition: all 0.2s 0s ease, all 0.2s 0s ease;
+	-o-transition: all 0.2s 0s ease, all 0.2s 0s ease;
+	transition: all 0.2s 0s ease, all 0.2s 0s ease;
+}
+
+/* basics */
+.picture {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	margin-bottom: 2cm;
+}
+
+.picture img {
+	border-radius: 50%;
+}
+
+/* platform type */
+body.WEB .item-nav-item,
+body.MOBILE .item-nav-item,
+body.PRINT .item-nav-item {
+	display: none;
+}
+
+body.WEB .nav-add,
+body.MOBILE .nav-add,
+body.PRINT .nav-add {
+	display: none;
+}
+
+body.WEB .content:hover,
+body.MOBILE .content:hover,
+body.PRINT .content:hover {
+	background-color: inherit;
+}
+
+/* navigation */ 
 .nav-add {
 	display: flex;
 	align-items: center;
@@ -86,17 +153,6 @@ blockquote {
 	fill: grey;
 	color: grey;
 	border-color: grey;
-}
-
-.content {
-	position: relative;
-}
-
-.icon {
-	display: inline-block;
-	width: 1em;
-	height: 1em;
-	stroke-width: 0;
 }
 
 .item-nav {
@@ -123,36 +179,4 @@ blockquote {
 
 .item-nav-item img {
 	height: 20px;
-}
-
-.content:hover .item-nav {
-	display: flex;
-	flex-direction: column;
-	background-color: aliceblue;
-}
-
-.content:hover {
-	background-color: aliceblue;
-	-webkit-transition: all 0.2s 0s ease, all 0.2s 0s ease;
-	-moz-transition: all 0.2s 0s ease, all 0.2s 0s ease;
-	-o-transition: all 0.2s 0s ease, all 0.2s 0s ease;
-	transition: all 0.2s 0s ease, all 0.2s 0s ease;
-}
-
-body.WEB .item-nav-item,
-body.MOBILE .item-nav-item,
-body.PRINT .item-nav-item {
-	display: none;
-}
-
-body.WEB .nav-add,
-body.MOBILE .nav-add,
-body.PRINT .nav-add {
-	display: none;
-}
-
-body.WEB .content:hover,
-body.MOBILE .content:hover,
-body.PRINT .content:hover {
-	background-color: inherit;
 }

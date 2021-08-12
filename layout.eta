@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
 		<title><%= it.resume.basics?.name ? it.resume.basics.name : ''%></title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<style>
 			<%= it.css %>
 		</style>
@@ -11,7 +12,10 @@
 	<body class="<%= it.resume.settings?.mode ? it.resume.settings.mode : ''%><%= it.type ? it.type : ''%>">
 		<div class="container">
 			<% it.templates.forEach(function(template){ %>
-				<%~ include(template, {resume: it.resume}) %>
+				<%~ include(template, {
+					resume: it.resume,
+					formatDate: it.formatDate
+				}) %>
 			<% }) %>
 		</div>
 	</body>

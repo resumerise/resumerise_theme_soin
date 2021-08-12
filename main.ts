@@ -2,8 +2,18 @@ import * as stdPath from "https://deno.land/std@0.97.0/path/mod.ts";
 import * as eta from "https://deno.land/x/eta@v1.6.0/mod.ts";
 import { ResumeriseMeta } from "resumerise_library/mod.ts";
 import { Resume } from "../resumerise_library/codegen/models/model/resume.ts";
+import { format } from "https://deno.land/std@0.102.0/datetime/mod.ts";
+import { Settings } from "../resumerise_library/codegen/models/model/settings.ts";
 
 const __dirname = stdPath.dirname(stdPath.fromFileUrl(import.meta.url));
+
+function formatDate(timestamp: string, settings: Settings) {
+  try {
+    return format(new Date(timestamp), settings?.dateFormat!);
+  } catch (e) {
+    console.log(`Date could not be formatted ${e}`);
+  }
+}
 
 eta.configure({
   views: stdPath.join("views"),
@@ -97,7 +107,39 @@ export const render = async (
   const dateRangeTemplateName = "date-range";
   eta.templates.define(
     dateRangeTemplateName,
-    eta.loadFile(`${__dirname}/views/date-range.eta`, {} as any, true),
+    eta.loadFile(`${__dirname}/views-other/date-range.eta`, {} as any, true),
+  );
+
+  const keyValueTemplateName = "key-value-item";
+  eta.templates.define(
+    keyValueTemplateName,
+    eta.loadFile(
+      `${__dirname}/views-other/key-value-item.eta`,
+      {} as any,
+      true,
+    ),
+  );
+
+  const listTemplateName = "list";
+  eta.templates.define(
+    listTemplateName,
+    eta.loadFile(
+      `${__dirname}/views-other/list.eta`,
+      {} as any,
+      true,
+    ),
+  );
+
+  const locationTemplateName = "location";
+  eta.templates.define(
+    locationTemplateName,
+    eta.loadFile(`${__dirname}/views/location.eta`, {} as any, true),
+  );
+
+  const profilePictureTemplateName = "profile-picture";
+  eta.templates.define(
+    profilePictureTemplateName,
+    eta.loadFile(`${__dirname}/views/profile-picture.eta`, {} as any, true),
   );
 
   const map = new Map<string, string>();
@@ -112,6 +154,7 @@ export const render = async (
   map.set("PUBLICATION", publicationTemplateName);
   map.set("REFERENCE", referenceTemplateName);
   map.set("SKILL", skillsTemplateName);
+  map.set("LOCATION", locationTemplateName);
   map.set("VOLUNTEER", volunteerTemplateName);
   map.set("WORK", workTemplateName);
 
@@ -123,6 +166,7 @@ export const render = async (
   try {
     const result = await eta.render(layout, {
       css: css,
+      formatDate: formatDate,
       resume: resume,
       type: type,
       templates: Array.from(orderedMap.values()).filter((item) => !!item),

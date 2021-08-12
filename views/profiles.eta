@@ -1,49 +1,27 @@
-<div class="content">
-    <% /* <%~ include('nav', {categoryKey: it.resume.settings.categoryKeys.profiles}) %> */ %>
-    <% if(it.resume.settings?.labels?.categoryProperty?.profile?.categoryTitle) { %>
-		<h2>
-		<%= it.resume.settings.labels.categoryProperty.profile.categoryTitle %>
-		</h2>
-	<% } %>
-    <section class="sheet" id='profiles'>
-      <% it.resume.basics.profiles?.forEach(function(profile){ %>
-        <div class='item'>
-            <!-- network -->
-            <% if(it.resume.settings?.labels?.categoryProperty?.profile?.network) { %>
-                <strong>
-                <%= it.resume.settings.labels.categoryProperty.profile.network %>
-                </strong>
-            <% } %>
-            <% if(profile.network) { %>
-                <div class='network'>
-                <%= profile.network %>
-                </div>
-            <% } %>
-            <!-- username -->
-            <% if(it.resume.settings?.labels?.categoryProperty?.profile?.username) { %>
-                <strong>
-                <%= it.resume.settings.labels.categoryProperty.profile.username %>
-                </strong>
-            <% } %>
-            <% if(profile.username) { %>
-                <div class='username'>
-                <%= profile.username %>
-                </div>
-            <% } %>
-            <!-- url -->
-            <% if(it.resume.settings?.labels?.categoryProperty?.profile?.url) { %>
-                <strong>
-                <%= it.resume.settings.labels.categoryProperty.profile.url %>
-                </strong>
-            <% } %>
-            <% if(profile.url) { %>
-                <div class='url'>
-                <a href="<%= profile.url %>">
-                    Link
-                </a>
-                </div>
-            <% } %>
-        </div>
-      <% }) %>
-    </section>
-  </div>
+<section id="profiles">
+<% /* <%~ include('nav', {categoryKey: it.resume.settings.categoryKeys.profiles}) %> */ %>
+<% if(it.resume.settings?.labels?.categoryProperty?.profile?.categoryTitle) { %>
+    <h2>
+        <%= it.resume.settings.labels.categoryProperty.profile.categoryTitle %>
+    </h2>
+<% } %>
+<% it.resume.basics.profiles?.forEach(function(profile){ %>
+    <div class='item content'>
+        <%~ include('key-value-item', {
+            label: it.resume.settings?.labels?.categoryProperty?.profile?.network, 
+            value: profile.network,
+            id: 'profile-network',
+        }) %>
+        <%~ include('key-value-item', {
+            label: it.resume.settings?.labels?.categoryProperty?.profile?.username, 
+            value: profile.username,
+            id: 'profile-username',
+        }) %>
+        <%~ include('key-value-item', {
+            label: it.resume.settings?.labels?.categoryProperty?.profile?.url, 
+            value: profile.url,
+            id: 'profile-url',
+        }) %>
+    </div>
+<% }) %>
+</section>
