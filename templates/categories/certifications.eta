@@ -1,10 +1,10 @@
 <section id="certifications">
-<% if (it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle) { %>
-	<h2><%= it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle %></h2>
-<% } %>
-<% it.resume?.certifications.forEach(function(certificate) { %>
+	<% if (it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle) { %>
+		<h1><%= it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle %></h1>
+	<% } %>
+	<% it.resume?.certifications.forEach(function(certificate) { %>
 	<div class="item content">
-		<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.work}) %> */ %>
+		<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
 		<%~ include('key-value-item', {
 			label: it.resume.settings?.labels?.categoryProperty?.certificate?.issueDate, 
 			value: it.formatDate(certificate.issueDate, it.resume.settings),
@@ -21,6 +21,6 @@
 			id: 'certificate-title',
 		}) %>
 	</div>
-<% }) %>
-<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.work}) %> */ %>
+	<% }) %>
+	<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
 </section>

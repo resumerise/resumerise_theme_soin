@@ -1,12 +1,12 @@
 <section id="awards">
 	<% if(it.resume.settings?.labels?.categoryProperty?.award?.categoryTitle) { %>
-		<h2>
+		<h1>
 			<%= it.resume.settings.labels.categoryProperty.award.categoryTitle %>
-		</h2>
+		</h1>
 	<% } %>
 	<% it.resume?.awards.forEach(function(award) { %>
 	<div class="item content">
-		<% /* <%~ include('nav', {categoryKey: it.resume.settings.categoryKeys.award, id: id, showDelete: true}) %>  */ %>
+		<%~ include('nav', {categoryKey: it.resume.settings?.categoryKeys?.award, id: award.id, showDelete: true}) %>
 		<%~ include('key-value-item', {
 			label: it.resume.settings?.labels?.categoryProperty?.award?.title, 
 			value: award.title,
@@ -29,5 +29,5 @@
 		}) %>
 	</div>
 	<% }) %>
-	<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.award}) %> */ %>
+	<%~ include('add', {categoryKey: it.resume.settings?.categoryKeys?.award}) %>
 </section>

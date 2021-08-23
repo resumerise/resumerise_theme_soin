@@ -1,45 +1,45 @@
 <section id="education">
-<% if(it.resume.settings?.labels?.categoryProperty?.education?.categoryTitle) { %>
-	<h2>
-	<%= it.resume.settings.labels.categoryProperty.education.categoryTitle %>
-	</h2>
-<% } %>
-<% it.resume?.education.forEach(function(education) { %>
-	<div class="item content">
-	<% /* <%~ include('nav', {categoryKey: it.resume.settings.categoryKeys.skill, id: id, showDelete: true}) %>  */ %>
-	<%~ include('date-range', {
-		formatDate: it.formatDate, 
-		startDate: education.startDate,
-		endDate: education.endDate,
-		present: education.present,
-		settings: it.resume.settings
-	}) %>
-	<%~ include('key-value-item', {
-		label: it.resume.settings?.labels?.categoryProperty?.education?.institution, 
-		value: education.institution,
-		id: 'education-institution',
-	}) %>
-	<%~ include('key-value-item', {
-		label: it.resume.settings?.labels?.categoryProperty?.education?.area, 
-		value: education.area,
-		id: 'education-area',
-	}) %>
-	<%~ include('key-value-item', {
-		label: it.resume.settings?.labels?.categoryProperty?.education?.studyType, 
-		value: education.studyType,
-		id: 'education-studyType',
-	}) %>
-	<%~ include('key-value-item', {
-		label: it.resume.settings?.labels?.categoryProperty?.education?.gpa, 
-		value: education.gpa,
-		id: 'education-gpa',
-	}) %>
-	<%~ include('list', {
-		label: it.resume.settings?.labels?.categoryProperty?.education?.courses, 
-		data: education.courses,
-		id: 'education-courses',
-	}) %>
-	</div>
-<% }) %>
-<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.skill}) %> */ %>
+	<% if(it.resume.settings?.labels?.categoryProperty?.education?.categoryTitle) { %>
+		<h1>
+			<%= it.resume.settings.labels.categoryProperty.education.categoryTitle %>
+		</h1>
+	<% } %>
+	<% it.resume?.education.forEach(function(education) { %>
+		<div class="item content">
+			<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.education, showDelete: true, id: education.id}) %>
+			<%~ include('date-range', {
+				formatDate: it.formatDate, 
+				startDate: education.startDate,
+				endDate: education.endDate,
+				present: education.present,
+				settings: it.resume.settings
+			}) %>
+			<%~ include('key-value-item', {
+				label: it.resume.settings?.labels?.categoryProperty?.education?.institution, 
+				value: education.institution,
+				id: 'education-institution',
+			}) %>
+			<%~ include('key-value-item', {
+				label: it.resume.settings?.labels?.categoryProperty?.education?.area, 
+				value: education.area,
+				id: 'education-area',
+			}) %>
+			<%~ include('key-value-item', {
+				label: it.resume.settings?.labels?.categoryProperty?.education?.studyType, 
+				value: education.studyType,
+				id: 'education-studyType',
+			}) %>
+			<%~ include('key-value-item', {
+				label: it.resume.settings?.labels?.categoryProperty?.education?.gpa, 
+				value: education.gpa,
+				id: 'education-gpa',
+			}) %>
+			<%~ include('list', {
+				label: it.resume.settings?.labels?.categoryProperty?.education?.courses, 
+				data: education.courses,
+				id: 'education-courses',
+			}) %>
+		</div>
+	<% }) %>
+	<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.education}) %>
 </section>

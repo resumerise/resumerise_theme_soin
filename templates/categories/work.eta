@@ -1,14 +1,14 @@
 <section id="work">
     <% if (it.resume.settings?.labels?.categoryProperty?.work?.categoryTitle) { %>
-        <h2><%= it.resume.settings?.labels?.categoryProperty?.work?.categoryTitle %></h2>
+        <h1><%= it.resume.settings?.labels?.categoryProperty?.work?.categoryTitle %></h1>
     <% } %>
     <% it.resume?.work.forEach(function(work) { %>
     <div class="item content">
-        <% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.work}) %> */ %>
+        <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work, showDelete: true, id: work.id}) %>
         <% if (work.company) { %>
-        <h3 class="name">
+        <h2>
             <%= work.company %>
-        </h3>
+        </h2>
         <% } %>
         <%~ include('date-range', {
             formatDate: it.formatDate,
@@ -39,5 +39,5 @@
 		}) %>
     </div>
     <% }) %>
-    <% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.work}) %> */ %>
+    <%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
 </section>

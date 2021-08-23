@@ -1,11 +1,11 @@
 <section id='basics'>
-<%~ include('profile-picture', {
-    picture: it.resume.basics.picture
-}) %>
-<% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.work}) %> */ %>
-<% if (it.resume.settings?.labels?.categoryProperty?.basics?.categoryTitle) { %>
-    <h2><%= it.resume.settings.labels.categoryProperty.basics.categoryTitle %></h2>
-<% } %>
+    <%~ include('profile-picture', {
+        picture: it.resume.basics.picture
+    }) %>
+    <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
+    <% if (it.resume.settings?.labels?.categoryProperty?.basics?.categoryTitle) { %>
+        <h1><%= it.resume.settings.labels.categoryProperty.basics.categoryTitle %></h1>
+    <% } %>
     <div class="content">
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.website, 

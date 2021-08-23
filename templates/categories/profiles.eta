@@ -1,27 +1,28 @@
 <section id="profiles">
-<% /* <%~ include('nav', {categoryKey: it.resume.settings.categoryKeys.profiles}) %> */ %>
-<% if(it.resume.settings?.labels?.categoryProperty?.profile?.categoryTitle) { %>
-    <h2>
-        <%= it.resume.settings.labels.categoryProperty.profile.categoryTitle %>
-    </h2>
-<% } %>
-<% it.resume.basics.profiles?.forEach(function(profile){ %>
-    <div class='item content'>
-        <%~ include('key-value-item', {
-            label: it.resume.settings?.labels?.categoryProperty?.profile?.network, 
-            value: profile.network,
-            id: 'profile-network',
-        }) %>
-        <%~ include('key-value-item', {
-            label: it.resume.settings?.labels?.categoryProperty?.profile?.username, 
-            value: profile.username,
-            id: 'profile-username',
-        }) %>
-        <%~ include('key-value-item', {
-            label: it.resume.settings?.labels?.categoryProperty?.profile?.url, 
-            value: profile.url,
-            id: 'profile-url',
-        }) %>
-    </div>
-<% }) %>
+    <% if(it.resume.settings?.labels?.categoryProperty?.profile?.categoryTitle) { %>
+        <h1>
+            <%= it.resume.settings.labels.categoryProperty.profile.categoryTitle %>
+        </h1>
+    <% } %>
+    <% it.resume.basics.profiles?.forEach(function(profile){ %>
+        <div class='item content'>
+            <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.profile, showDelete: true, id: profile.id}) %>
+            <%~ include('key-value-item', {
+                label: it.resume.settings?.labels?.categoryProperty?.profile?.network, 
+                value: profile.network,
+                id: 'profile-network',
+            }) %>
+            <%~ include('key-value-item', {
+                label: it.resume.settings?.labels?.categoryProperty?.profile?.username, 
+                value: profile.username,
+                id: 'profile-username',
+            }) %>
+            <%~ include('key-value-item', {
+                label: it.resume.settings?.labels?.categoryProperty?.profile?.url, 
+                value: profile.url,
+                id: 'profile-url',
+            }) %>
+        </div>
+    <% }) %>
+    <%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.profile}) %>
 </section>

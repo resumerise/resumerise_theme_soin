@@ -1,5 +1,10 @@
+:root {
+	--layout-padding: 40px;
+}
+
 /* layout */
 body {
+	padding: var(--layout-padding);
 	background: #fff;
 	font: 15px Arial, Helvetica, sans-serif;
 }
@@ -25,21 +30,12 @@ body {
 	text-align: left;
 }
 
-em {
-	color: #999;
-}
-p {
-	line-height: 1.4;
-}
-
-ul {
-	margin: 0;
+h1 {
+	font-size: 22px;
 }
 
 h2 {
-	padding: 0;
-	margin-top: 0;
-	margin-bottom: 1em;
+	font-size: 18px;
 }
 
 section {
@@ -85,21 +81,6 @@ blockquote {
 	stroke-width: 0;
 }
 
-.content:hover .item-nav {
-	display: flex;
-	flex-direction: column;
-	background-color: aliceblue;
-}
-
-.content:hover {
-	background-color: aliceblue;
-	-webkit-transition: all 0.2s 0s ease, all 0.2s 0s ease;
-	-moz-transition: all 0.2s 0s ease, all 0.2s 0s ease;
-	-o-transition: all 0.2s 0s ease, all 0.2s 0s ease;
-	transition: all 0.2s 0s ease, all 0.2s 0s ease;
-}
-
-/* basics */
 .picture {
 	display: flex;
 	justify-content: center;
@@ -110,73 +91,4 @@ blockquote {
 
 .picture img {
 	border-radius: 50%;
-}
-
-/* platform type */
-body.WEB .item-nav-item,
-body.MOBILE .item-nav-item,
-body.PRINT .item-nav-item {
-	display: none;
-}
-
-body.WEB .nav-add,
-body.MOBILE .nav-add,
-body.PRINT .nav-add {
-	display: none;
-}
-
-body.WEB .content:hover,
-body.MOBILE .content:hover,
-body.PRINT .content:hover {
-	background-color: inherit;
-}
-
-/* navigation */ 
-.nav-add {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	border: 1px solid #999;
-	background-color: #fff;
-}
-
-.nav-add {
-	padding: 7px;
-}
-
-.nav-add img {
-	height: 20px;
-}
-
-.nav-add:hover {
-	fill: grey;
-	color: grey;
-	border-color: grey;
-}
-
-.item-nav {
-	width: 25px;
-	position: absolute;
-	top: 0;
-	right: -25px;
-	display: none;
-}
-
-.item-nav-item {
-	cursor: pointer;
-	margin-top: 5px;
-}
-
-.item-nav-item:last {
-	margin-bottom: 5px;
-}
-
-.item-nav-item:hover {
-	color: grey;
-	fill: grey;
-}
-
-.item-nav-item img {
-	height: 20px;
 }

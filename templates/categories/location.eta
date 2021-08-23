@@ -1,9 +1,9 @@
 <section id='location'>
-<% if (it.resume.settings?.labels?.categoryProperty?.location?.categoryTitle) { %>
-    <h2><%= it.resume.settings?.labels?.categoryProperty?.location?.categoryTitle %></h2>
-<% } %>
+    <% if (it.resume.settings?.labels?.categoryProperty?.location?.categoryTitle) { %>
+        <h1><%= it.resume.settings?.labels?.categoryProperty?.location?.categoryTitle %></h1>
+    <% } %>
     <div class="content">
-        <% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.location}) %> */ %>
+        <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.location}) %>
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.location?.address, 
             value: it.resume.basics?.location?.address,
@@ -30,5 +30,4 @@
             id: 'location-region',
         }) %>
     </div>
-    <% /* <%~ include('add', {categoryKey: it.resume.settings.categoryKeys.work}) %> */ %>
 </section>
