@@ -2,6 +2,7 @@ import * as eta from "https://deno.land/x/eta@v1.6.0/mod.ts";
 import {
   CompileException,
   getAddItemTemplatePath,
+  getFileContent,
   getNavTemplatePath,
   getWidgetCSSFilePath,
   ResumeriseMeta,
@@ -9,8 +10,6 @@ import {
 import { Resume } from "../resumerise_library/codegen/model/resume.ts";
 import { format } from "https://deno.land/std@0.102.0/datetime/mod.ts";
 import { Settings } from "../resumerise_library/codegen/model/settings.ts";
-// use polyfill to load file with file:/// and href://
-import "https://deno.land/x/file_fetch@0.2.0/polyfill.ts";
 
 function formatDate(timestamp: string, settings: Settings) {
   try {
@@ -20,29 +19,25 @@ function formatDate(timestamp: string, settings: Settings) {
   }
 }
 
-async function getFileContent(path: string): Promise<string> {
-  console.log("import-meta-url: " + import.meta.url);
-  return (await (await globalThis.fetch(
-    new URL(
-      path,
-      import.meta.url,
-    ).href,
-  )).text());
-}
-
 export const render = async (
   resume: Resume,
   type: string,
 ): Promise<string> => {
   try {
-    const layout = await getFileContent("./templates/layout.eta");
-    const css = await getFileContent("./css/style.css");
+    const layout = await getFileContent(
+      "./templates/layout.eta",
+      import.meta.url,
+    );
+    const css = await getFileContent("./css/style.css", import.meta.url);
 
     const awardTemplateName = "awards";
     eta.templates.define(
       awardTemplateName,
       eta.compile(
-        await getFileContent("./templates/categories/awards.eta"),
+        await getFileContent(
+          "./templates/categories/awards.eta",
+          import.meta.url,
+        ),
       ),
     );
 
@@ -50,7 +45,10 @@ export const render = async (
     eta.templates.define(
       basicTemplateName,
       eta.compile(
-        await getFileContent("./templates/categories/basics.eta"),
+        await getFileContent(
+          "./templates/categories/basics.eta",
+          import.meta.url,
+        ),
       ),
     );
 
@@ -58,7 +56,10 @@ export const render = async (
     eta.templates.define(
       profileTemplateName,
       eta.compile(
-        await getFileContent("./templates/categories/profiles.eta"),
+        await getFileContent(
+          "./templates/categories/profiles.eta",
+          import.meta.url,
+        ),
       ),
     );
 
@@ -66,7 +67,10 @@ export const render = async (
     eta.templates.define(
       educationTemplateName,
       eta.compile(
-        await getFileContent("./templates/categories/education.eta"),
+        await getFileContent(
+          "./templates/categories/education.eta",
+          import.meta.url,
+        ),
       ),
     );
 
@@ -74,7 +78,10 @@ export const render = async (
     eta.templates.define(
       interestTemplateName,
       eta.compile(
-        await getFileContent("./templates/categories/interests.eta"),
+        await getFileContent(
+          "./templates/categories/interests.eta",
+          import.meta.url,
+        ),
       ),
     );
 
@@ -82,7 +89,10 @@ export const render = async (
     eta.templates.define(
       languageTemplateName,
       eta.compile(
-        await getFileContent("./templates/categories/languages.eta"),
+        await getFileContent(
+          "./templates/categories/languages.eta",
+          import.meta.url,
+        ),
       ),
     );
 
@@ -90,7 +100,10 @@ export const render = async (
     eta.templates.define(
       publicationTemplateName,
       eta.compile(
-        await getFileContent("./templates/categories/publications.eta"),
+        await getFileContent(
+          "./templates/categories/publications.eta",
+          import.meta.url,
+        ),
       ),
     );
 
@@ -98,7 +111,10 @@ export const render = async (
     eta.templates.define(
       referenceTemplateName,
       eta.compile(
-        await getFileContent("./templates/categories/references.eta"),
+        await getFileContent(
+          "./templates/categories/references.eta",
+          import.meta.url,
+        ),
       ),
     );
 
@@ -106,7 +122,10 @@ export const render = async (
     eta.templates.define(
       skillsTemplateName,
       eta.compile(
-        await getFileContent("./templates/categories/skills.eta"),
+        await getFileContent(
+          "./templates/categories/skills.eta",
+          import.meta.url,
+        ),
       ),
     );
 
@@ -114,7 +133,10 @@ export const render = async (
     eta.templates.define(
       volunteerTemplateName,
       eta.compile(
-        await getFileContent("./templates/categories/volunteer.eta"),
+        await getFileContent(
+          "./templates/categories/volunteer.eta",
+          import.meta.url,
+        ),
       ),
     );
 
@@ -122,7 +144,10 @@ export const render = async (
     eta.templates.define(
       workTemplateName,
       eta.compile(
-        await getFileContent("./templates/categories/work.eta"),
+        await getFileContent(
+          "./templates/categories/work.eta",
+          import.meta.url,
+        ),
       ),
     );
 
@@ -130,7 +155,10 @@ export const render = async (
     eta.templates.define(
       projectTemplateName,
       eta.compile(
-        await getFileContent("./templates/categories/projects.eta"),
+        await getFileContent(
+          "./templates/categories/projects.eta",
+          import.meta.url,
+        ),
       ),
     );
 
@@ -138,7 +166,10 @@ export const render = async (
     eta.templates.define(
       certificateTemplateName,
       eta.compile(
-        await getFileContent("./templates/categories/certifications.eta"),
+        await getFileContent(
+          "./templates/categories/certifications.eta",
+          import.meta.url,
+        ),
       ),
     );
 
@@ -146,7 +177,10 @@ export const render = async (
     eta.templates.define(
       dateRangeTemplateName,
       eta.compile(
-        await getFileContent("./templates/widgets/date-range.eta"),
+        await getFileContent(
+          "./templates/widgets/date-range.eta",
+          import.meta.url,
+        ),
       ),
     );
 
@@ -154,7 +188,10 @@ export const render = async (
     eta.templates.define(
       keyValueTemplateName,
       eta.compile(
-        await getFileContent("./templates/widgets/key-value-item.eta"),
+        await getFileContent(
+          "./templates/widgets/key-value-item.eta",
+          import.meta.url,
+        ),
       ),
     );
 
@@ -162,7 +199,7 @@ export const render = async (
     eta.templates.define(
       listTemplateName,
       eta.compile(
-        await getFileContent("./templates/widgets/list.eta"),
+        await getFileContent("./templates/widgets/list.eta", import.meta.url),
       ),
     );
 
@@ -170,7 +207,10 @@ export const render = async (
     eta.templates.define(
       locationTemplateName,
       eta.compile(
-        await getFileContent("./templates/categories/location.eta"),
+        await getFileContent(
+          "./templates/categories/location.eta",
+          import.meta.url,
+        ),
       ),
     );
 
@@ -178,18 +218,21 @@ export const render = async (
     eta.templates.define(
       profilePictureTemplateName,
       eta.compile(
-        await getFileContent("./templates/categories/profile-picture.eta"),
+        await getFileContent(
+          "./templates/categories/profile-picture.eta",
+          import.meta.url,
+        ),
       ),
     );
 
     /** ! DO NOT REMOVE ! ------------ begin */
-    const widgetCss = getWidgetCSSFilePath();
+    const widgetCss = await getWidgetCSSFilePath();
 
     const navTemplateName = "nav";
     eta.templates.define(
       navTemplateName,
       eta.compile(
-        getNavTemplatePath(),
+        await getNavTemplatePath(),
       ),
     );
 
@@ -197,7 +240,7 @@ export const render = async (
     eta.templates.define(
       addTemplateName,
       eta.compile(
-        getAddItemTemplatePath(),
+        await getAddItemTemplatePath(),
       ),
     );
     /** ! DO NOT REMOVE ! ------------ end */
@@ -239,6 +282,6 @@ export const render = async (
 
 export const getMeta = async (): Promise<ResumeriseMeta> => {
   return JSON.parse(
-    await getFileContent("./meta.json"),
+    await getFileContent("./meta.json", import.meta.url),
   ) as ResumeriseMeta;
 };
