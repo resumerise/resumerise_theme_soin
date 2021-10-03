@@ -8,15 +8,10 @@ To get started with theme development, this is what you'll need:
 
 - [deno](https://deno.land/#installation)
 - [resumerise_cli](https://deno.land/x/resumerise_cli)
-- [resumerise_theme_retro](https://deno.land/x/resumerise_theme_retro)
 
 ### Serve theme
 
-Install the command-line tool:
-
-```
-deno install --allow-net --allow-read --unstable -n resumerise-cli https://deno.land/x/resumerise_cli/index.ts
-```
+Install the resumerise-cli https://github.com/resumerise/resumerise_cli first.
 
 Start the preview server with
 
