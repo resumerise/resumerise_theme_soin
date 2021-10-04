@@ -5,11 +5,10 @@ import {
   getFileContent,
   getNavTemplatePath,
   getWidgetCSSFilePath,
-  ResumeriseMeta,
 } from "resumerise_library/mod.ts";
-import { Resume } from "../resumerise_library/codegen/model/resume.ts";
+import { Resume } from "resumerise_library/codegen/model/resume.ts";
 import { format } from "https://deno.land/std@0.102.0/datetime/mod.ts";
-import { Settings } from "../resumerise_library/codegen/model/settings.ts";
+import { Settings } from "resumerise_library/codegen/model/settings.ts";
 
 function formatDate(timestamp: string, settings: Settings) {
   try {
@@ -262,7 +261,7 @@ export const render = async (
     map.set("WORK", workTemplateName);
 
     const orderedMap = new Map<string, string>();
-    resume.settings?.visibleCategories?.forEach((resumeCategory) => {
+    resume.settings?.visibleCategories?.forEach((resumeCategory: string) => {
       orderedMap.set(resumeCategory, map.get(resumeCategory)!);
     });
     const result = await eta.render(layout, {
@@ -278,10 +277,4 @@ export const render = async (
     console.log(`Error while compiling resume: ${e}`);
     throw new CompileException(e);
   }
-};
-
-export const getMeta = async (): Promise<ResumeriseMeta> => {
-  return JSON.parse(
-    await getFileContent("./meta.json", import.meta.url),
-  ) as ResumeriseMeta;
 };
