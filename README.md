@@ -16,8 +16,9 @@ Install the resumerise-cli https://github.com/resumerise/resumerise_cli first.
 Start the preview server with
 
 ```
-resumerise-cli serve file:///[absolute path to your resumerise theme]/mod.ts
+resumerise-cli serve file:///[absolute-path-to-your-resumerise-theme]/mod.ts
 ```
+Note that unix/linux users should be exclude the `/` at the beginning of the absolute path.
 
 After the preview server started you should see the console output.
 
