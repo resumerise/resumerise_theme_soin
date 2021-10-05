@@ -5,10 +5,10 @@ import {
   getFileContent,
   getNavTemplatePath,
   getWidgetCSSFilePath,
-} from "resumerise_library/mod.ts";
-import { Resume } from "resumerise_library/codegen/model/resume.ts";
+} from "https://deno.land/x/resumerise_library@0.1.7/mod.ts";
+import { Resume } from "https://deno.land/x/resumerise_library@0.1.7/codegen/model/resume.ts";
 import { format } from "https://deno.land/std@0.102.0/datetime/mod.ts";
-import { Settings } from "resumerise_library/codegen/model/settings.ts";
+import { Settings } from "https://deno.land/x/resumerise_library@0.1.7/codegen/model/settings.ts";
 
 function formatDate(timestamp: string, settings: Settings) {
   try {

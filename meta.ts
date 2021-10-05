@@ -1,4 +1,4 @@
-import { ResumeriseMeta } from "resumerise_library/mod.ts";
+import { ResumeriseMeta } from "https://deno.land/x/resumerise_library@0.1.7/mod.ts";
 
 export const meta = {
   colors: ["#000", "#fff"],
