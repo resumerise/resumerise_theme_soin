@@ -1,0 +1,9 @@
+{
+  "deno.suggest.imports.hosts": {
+    "https://cdn.skypack.dev": false,
+    "https://deno.land": false,
+    "https://jspm.dev": false
+  },
+  "deno.enable": true,
+  "deno.importMap": "./import_maps.json"
+}
