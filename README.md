@@ -18,7 +18,7 @@ Start the preview server with
 ```
 resumerise-cli serve file:///[absolute-path-to-your-resumerise-theme]/mod.ts
 ```
-Note that unix/linux users should be exclude the `/` at the beginning of the absolute path.
+Note that unix/linux users should exclude the `/` at the beginning of the absolute path.
 
 After the preview server started you should see the console output.
 
