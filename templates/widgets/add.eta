@@ -1,3 +1,0 @@
-<div class="nav-add" onclick="window.dispatchEvent(new CustomEvent('add', { detail: { categoryKey:  '<%= it.categoryKey %>'}}))">
-    <i class="far fa-plus-square"></i>
-</div>
