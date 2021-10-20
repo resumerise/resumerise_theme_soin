@@ -13,6 +13,11 @@
             id: 'basics-website',
         }) %>
         <%~ include('key-value-item', {
+            label: it.resume.settings?.labels?.categoryProperty?.basics?.label, 
+            value: it.resume.basics.label,
+            id: 'basics-label',
+        }) %>
+        <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.email, 
             value: it.resume.basics.email,
             id: 'basics-email',
