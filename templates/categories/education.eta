@@ -12,32 +12,38 @@
 				startDate: education.startDate,
 				endDate: education.endDate,
 				present: education.present,
+				showLabel: false,
 				settings: it.resume.settings
 			}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.education?.institution, 
 				value: education.institution,
-				id: 'education-institution',
+				showLabel: false,
+				id: 'education-institution'
 			}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.education?.area, 
 				value: education.area,
-				id: 'education-area',
+				showLabel: false,
+				id: 'education-area'
 			}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.education?.studyType, 
 				value: education.studyType,
-				id: 'education-studyType',
+				showLabel: false,
+				id: 'education-studyType'
 			}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.education?.gpa, 
 				value: education.gpa,
-				id: 'education-gpa',
+				showLabel: false,
+				id: 'education-gpa'
 			}) %>
 			<%~ include('list', {
 				label: it.resume.settings?.labels?.categoryProperty?.education?.courses, 
 				data: education.courses,
-				id: 'education-courses',
+				showLabel: false,
+				id: 'education-courses'
 			}) %>
 		</div>
 	<% }) %>

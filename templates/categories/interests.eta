@@ -10,11 +10,13 @@
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.interest?.name, 
 				value: interest.name,
+				showLabel: false,
 				id: 'interest-name',
 			}) %>
 			<%~ include('list', {
 				label: it.resume.settings?.labels?.categoryProperty?.interest?.keywords, 
 				data: interest.keywords,
+				showLabel: false,
 				id: 'interest-keywords',
 			}) %>
 		</div>

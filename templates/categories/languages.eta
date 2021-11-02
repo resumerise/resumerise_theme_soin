@@ -10,12 +10,14 @@
 		<%~ include('key-value-item', {
 			label: it.resume.settings?.labels?.categoryProperty?.language?.language, 
 			value: language.language,
-			id: 'language-language',
+			showLabel: false,
+			id: 'language-language'
 		}) %>
 		<%~ include('key-value-item', {
 			label: it.resume.settings?.labels?.categoryProperty?.language?.fluency, 
 			value: language.fluency,
-			id: 'language-fluency',
+			showLabel: false,
+			id: 'language-fluency'
 		}) %>
 		</div>
 	<% }) %>

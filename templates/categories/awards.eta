@@ -10,22 +10,26 @@
 		<%~ include('key-value-item', {
 			label: it.resume.settings?.labels?.categoryProperty?.award?.title, 
 			value: award.title,
-			id: 'award-title',
+			showLabel: false,
+			id: 'award-title'
 		}) %>
 		<%~ include('key-value-item', {
 			label: it.resume.settings?.labels?.categoryProperty?.award?.date, 
 			value: it.formatDate(award.date, it.resume.settings),
-			id: 'award-date',
+			showLabel: false,
+			id: 'award-date'
 		}) %>
 		<%~ include('key-value-item', {
 			label: it.resume.settings?.labels?.categoryProperty?.award?.awarder, 
 			value: award.awarder,
-			id: 'award-awarder',
+			showLabel: false,
+			id: 'award-awarder'
 		}) %>
 		<%~ include('key-value-item', {
 			label: it.resume.settings?.labels?.categoryProperty?.award?.summary, 
 			value: award.summary,
-			id: 'award-summary',
+			showLabel: false,
+			id: 'award-summary'
 		}) %>
 	</div>
 	<% }) %>

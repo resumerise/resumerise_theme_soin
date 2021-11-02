@@ -10,11 +10,13 @@
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.reference?.reference, 
 				value: reference.reference,
+				showLabel: false,
 				id: 'reference-reference',
 			}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.reference?.name, 
 				value: reference.name,
+				showLabel: false,
 				id: 'reference-name',
 			}) %>
 		</div>
