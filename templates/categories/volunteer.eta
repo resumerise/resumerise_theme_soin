@@ -10,6 +10,7 @@
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.volunteer?.organization, 
 				value: volunteer.organization,
+				showLabel: false,
 				id: 'volunteer-organization',
 			}) %>
 			<%~ include('date-range', {
@@ -17,26 +18,31 @@
 				startDate: volunteer.startDate,
 				endDate: volunteer.endDate,
 				present: volunteer.present,
+				showLabel: false,
 				settings: it.resume.settings
 			}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.volunteer?.position, 
 				value: volunteer.position,
+				showLabel: false,
 				id: 'volunteer-position',
 			}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.volunteer?.website, 
 				value: volunteer.website,
+				showLabel: false,
 				id: 'volunteer-website',
 			}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.volunteer?.summary, 
 				value: volunteer.summary,
+				showLabel: false,
 				id: 'volunteer-summary',
 			}) %>
 			<%~ include('list', {
 				label: it.resume.settings?.labels?.categoryProperty?.volunteer?.highlights, 
 				data: volunteer.highlights,
+				showLabel: false,
 				id: 'volunteer-highlights',
 			}) %>
 		</div>

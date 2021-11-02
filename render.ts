@@ -5,6 +5,9 @@ import {
   getFileContent,
   getNavTemplatePath,
   getWidgetCSSFilePath,
+  getWidgetDateRangeFilePath,
+  getWidgetKeyValuePairFilePath,
+  getWidgetListFilePath,
 } from "resumerise_library/mod.ts";
 import { Resume } from "resumerise_library/codegen/model/resume.ts";
 import { format } from "https://deno.land/std@0.102.0/datetime/mod.ts";
@@ -176,10 +179,7 @@ export const render = async (
     eta.templates.define(
       dateRangeTemplateName,
       eta.compile(
-        await getFileContent(
-          "./templates/widgets/date-range.eta",
-          import.meta.url,
-        ),
+        await getWidgetDateRangeFilePath(),
       ),
     );
 
@@ -187,10 +187,7 @@ export const render = async (
     eta.templates.define(
       keyValueTemplateName,
       eta.compile(
-        await getFileContent(
-          "./templates/widgets/key-value-item.eta",
-          import.meta.url,
-        ),
+        await getWidgetKeyValuePairFilePath(),
       ),
     );
 
@@ -198,7 +195,7 @@ export const render = async (
     eta.templates.define(
       listTemplateName,
       eta.compile(
-        await getFileContent("./templates/widgets/list.eta", import.meta.url),
+        await getWidgetListFilePath(),
       ),
     );
 

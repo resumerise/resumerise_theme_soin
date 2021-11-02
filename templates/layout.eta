@@ -6,18 +6,94 @@
 		<title><%= it.resume.basics?.name ? it.resume.basics.name : ''%></title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<style>
-			<%= it.css %>
-			<%= it.widgetCss %>
+			<%~ it.css %>
+			<%~ it.widgetCss %>
+			
+			@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Zen+Antique+Soft&display=swap');
+			body {
+				font-family: 'Poppins', sans-serif;
+			}
 		</style>
 	</head>
 	<body>
-		<div class="container">
-			<% it.templates.forEach(function(template){ %>
-				<%~ include(template, {
-					resume: it.resume,
-					formatDate: it.formatDate
-				}) %>
-			<% }) %>
+		<div class="main container">
+			<!-- BASICS -->
+			<%~ include("basic", {
+				resume: it.resume,
+				formatDate: it.formatDate
+			}) %>
+
+			<!-- SKILLS -->
+			<%~ include("skills", {
+				resume: it.resume,
+				formatDate: it.formatDate
+			}) %>
+			
+			<!-- AWARDS -->
+			<%~ include("awards", {
+				resume: it.resume,
+				formatDate: it.formatDate
+			}) %>
+			
+			<!-- PROFILE -->
+			<%~ include("profile", {
+				resume: it.resume,
+				formatDate: it.formatDate
+			}) %>
+			
+			<!-- INTEREST -->
+			<%~ include("interest", {
+				resume: it.resume,
+				formatDate: it.formatDate
+			}) %>
+			
+			<!-- LANGUAGE -->
+			<%~ include("language", {
+				resume: it.resume,
+				formatDate: it.formatDate
+			}) %>
+			
+			<!-- WORK -->
+			<%~ include("work", {
+				resume: it.resume,
+				formatDate: it.formatDate
+			}) %>
+			
+			<!-- PROJECT -->
+			<%~ include("project", {
+				resume: it.resume,
+				formatDate: it.formatDate
+			}) %>
+			
+			<!-- EDUCATION -->
+			<%~ include("education", {
+				resume: it.resume,
+				formatDate: it.formatDate
+			}) %>
+			
+			<!-- PUBLICATION -->
+			<%~ include("publication", {
+				resume: it.resume,
+				formatDate: it.formatDate
+			}) %>
+			
+			<!-- REFERENCE -->
+			<%~ include("reference", {
+				resume: it.resume,
+				formatDate: it.formatDate
+			}) %>
+			
+			<!-- VOLUNTEER -->
+			<%~ include("volunteer", {
+				resume: it.resume,
+				formatDate: it.formatDate
+			}) %>
+			
+			<!-- CERTIFICATION -->
+			<%~ include("certification", {
+				resume: it.resume,
+				formatDate: it.formatDate
+			}) %>
 		</div>
 	</body>
 </html>

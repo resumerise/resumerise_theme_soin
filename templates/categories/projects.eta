@@ -8,43 +8,51 @@
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.project?.title, 
 				value: project.title,
-				id: 'project-title',
+				showLabel: false,
+				id: 'project-title'
 			}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.project?.client, 
 				value: project.client,
-				id: 'project-client',
+				showLabel: false,
+				id: 'project-client'
 			}) %>
 			<%~ include('date-range', {
 				formatDate: it.formatDate,
 				startDate: project.startDate,
 				endDate: project.endDate,
 				present: project.present,
-				settings: it.resume.settings
+				settings: it.resume.settings,
+				showLabel: false,
 			}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.project?.summary, 
 				value: project.summary,
+				showLabel: false,
 				id: 'project-summary',
 			}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.project?.website, 
 				value: project.website,
+				showLabel: false,
 				id: 'project-website',
 			}) %>
 			<%~ include('list', {
 				label: it.resume.settings?.labels?.categoryProperty?.project?.products, 
 				data: project.products,
+				showLabel: false,
 				id: 'project-products',
 			}) %>
 			<%~ include('list', {
 				label: it.resume.settings?.labels?.categoryProperty?.project?.roles, 
 				data: project.roles,
+				showLabel: false,
 				id: 'project-roles',
 			}) %>
 			<%~ include('list', {
 				label: it.resume.settings?.labels?.categoryProperty?.project?.highlights, 
 				data: project.highlights,
+				showLabel: false,
 				id: 'project-highlights',
 			}) %>
 		</div>

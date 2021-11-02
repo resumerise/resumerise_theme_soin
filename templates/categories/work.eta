@@ -15,26 +15,31 @@
             startDate: work.startDate,
             endDate: work.endDate,
             present: work.present,
+            showLabel: false,
             settings: it.resume.settings
         }) %>
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.work?.position, 
             value: work.position,
+            showLabel: false,
             id: 'work-position',
         }) %>
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.work?.website, 
             value: work.website,
+            showLabel: false,
             id: 'work-website',
         }) %>
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.work?.summary, 
             value: work.summary,
+            showLabel: false,
             id: 'work-summary',
         }) %>
         <%~ include('list', {
 			label: it.resume.settings?.labels?.categoryProperty?.work?.highlights, 
 			data: work.highlights,
+            showLabel: false,
 			id: 'work-highlights',
 		}) %>
     </div>

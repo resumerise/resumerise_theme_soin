@@ -8,16 +8,19 @@
 		<%~ include('key-value-item', {
 			label: it.resume.settings?.labels?.categoryProperty?.certificate?.issueDate, 
 			value: it.formatDate(certificate.issueDate, it.resume.settings),
-			id: 'certificate-issueDate',
+			showLabel: false,
+			id: 'certificate-issueDate'
 		}) %>
 		<%~ include('key-value-item', {
 			label: it.resume.settings?.labels?.categoryProperty?.certificate?.issuer, 
 			value: certificate.issuer,
+			showLabel: false,
 			id: 'certificate-issuer',
 		}) %>
 		<%~ include('key-value-item', {
 			label: it.resume.settings?.labels?.categoryProperty?.certificate?.title, 
 			value: certificate.title,
+			showLabel: false,
 			id: 'certificate-title',
 		}) %>
 	</div>

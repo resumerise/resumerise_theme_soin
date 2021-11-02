@@ -8,29 +8,40 @@
     <% } %>
     <div class="content">
         <%~ include('key-value-item', {
+            label: it.resume.settings?.labels?.categoryProperty?.basics?.name, 
+            value: it.resume.basics.name,
+            showLabel: false,
+            id: 'basics-name'
+        }) %>
+        <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.website, 
             value: it.resume.basics.website,
-            id: 'basics-website',
+            showLabel: false,
+            id: 'basics-website'
         }) %>
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.label, 
             value: it.resume.basics.label,
-            id: 'basics-label',
+            showLabel: false,
+            id: 'basics-label'
         }) %>
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.email, 
             value: it.resume.basics.email,
-            id: 'basics-email',
+            showLabel: false,
+            id: 'basics-email'
         }) %>
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.phone, 
             value: it.resume.basics.phone,
-            id: 'basics-phone',
+            showLabel: false,
+            id: 'basics-phone'
         }) %>
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.summary, 
             value: it.resume.basics.summary,
-            id: 'basics-summary',
+            showLabel: false,
+            id: 'basics-summary'
         }) %>
     </div>
 </section>

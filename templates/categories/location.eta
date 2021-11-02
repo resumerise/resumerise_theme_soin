@@ -7,27 +7,32 @@
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.location?.address, 
             value: it.resume.basics?.location?.address,
-            id: 'location-address',
+            showLabel: false,
+            id: 'location-address'
         }) %>
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.location?.postalCode, 
             value: it.resume.basics?.location?.postalCode,
-            id: 'location-postal-code',
+            showLabel: false,
+            id: 'location-postal-code'
         }) %>
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.location?.city, 
             value: it.resume.basics?.location?.city,
-            id: 'location-city',
+            showLabel: false,
+            id: 'location-city'
         }) %>
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.location?.countryCode, 
             value: it.resume.basics?.location?.countryCode,
-            id: 'location-country-code',
+            showLabel: false,
+            id: 'location-country-code'
         }) %>
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.location?.region, 
             value: it.resume.basics?.location?.region,
-            id: 'location-region',
+            showLabel: false,
+            id: 'location-region'
         }) %>
     </div>
 </section>
