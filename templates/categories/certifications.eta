@@ -1,4 +1,4 @@
-<section id="certifications">
+<section class="certifications">
 	<% if (it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle) { %>
 		<h1><%= it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle %></h1>
 	<% } %>

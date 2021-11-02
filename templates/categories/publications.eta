@@ -1,4 +1,4 @@
-<section id="publications">
+<section class="publications">
 	<% if(it.resume.settings?.labels?.categoryProperty?.publication?.categoryTitle) { %>
 		<h1>
 		    <%= it.resume.settings.labels.categoryProperty.publication.categoryTitle %>

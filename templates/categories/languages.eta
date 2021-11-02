@@ -1,25 +1,27 @@
-<section id="languages">
+<section class="section languages">
 	<% if(it.resume.settings?.labels?.categoryProperty?.language?.categoryTitle) { %>
-		<h1>
+		<h3 class="section__title">
 			<%= it.resume.settings.labels.categoryProperty.language.categoryTitle %>
-		</h1>
+		</h3>
 	<% } %>
-	<% it.resume?.languages.forEach(function(language) { %>
-		<div class="item content">
-		<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.language, showDelete: true, id: language.id}) %>
-		<%~ include('key-value-item', {
-			label: it.resume.settings?.labels?.categoryProperty?.language?.language, 
-			value: language.language,
-			showLabel: false,
-			id: 'language-language'
-		}) %>
-		<%~ include('key-value-item', {
-			label: it.resume.settings?.labels?.categoryProperty?.language?.fluency, 
-			value: language.fluency,
-			showLabel: false,
-			id: 'language-fluency'
-		}) %>
+	<div class="languages__container grid">
+		<% it.resume?.languages.forEach(function(language) { %>
+		<div class="box">
+			<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.language, showDelete: true, id: language.id}) %>
+			<%~ include('key-value-item', {
+				label: it.resume.settings?.labels?.categoryProperty?.language?.language, 
+				value: language.language,
+				showLabel: false,
+				classes: 'language__name'
+			}) %>
+			<%~ include('key-value-item', {
+				label: it.resume.settings?.labels?.categoryProperty?.language?.fluency, 
+				value: language.fluency,
+				showLabel: false,
+				classes: 'language-fluency'
+			}) %>
 		</div>
-	<% }) %>
+		<% }) %>
+	</div>
 	<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.language}) %>
 </section>
