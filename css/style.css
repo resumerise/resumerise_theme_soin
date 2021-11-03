@@ -1,5 +1,5 @@
-/*===== VARIABLES CSS =====*/
 
+/*===== VARIABLES CSS =====*/
 :root {
     --header-height: 3rem;
     /*========== COLORS ==========*/
@@ -142,9 +142,11 @@ img {
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
 }
-.list__label{
+
+.list__label {
     font-weight: var(--font-medium);
 }
+
 .list__items {
     margin-left: var(--mb-1);
 }
@@ -278,16 +280,18 @@ img {
 }
 
 /*========== WORK SECTION ==========*/
-.work__title{
+
+.work__title {
     color: var(--black-color);
 }
-.work__position{
+
+.work__position {
     font-weight: var(--font-medium);
 }
-.work__summary{
+
+.work__summary {
     margin: var(--mb-0-5) 0;
 }
-
 
 /*========== LANGUAGE SECTION ==========*/
 
