@@ -1,51 +1,53 @@
-<section class="volunteer">
+<section class="section volunteer">
 	<% if(it.resume.settings?.labels?.categoryProperty?.volunteer?.categoryTitle) { %>
-		<h1>
+		<h3 class="section__title">
 			<%= it.resume.settings.labels.categoryProperty.volunteer.categoryTitle %>
-		</h1>
+		</h3>
 	<% } %>
-	<% it.resume?.volunteer.forEach(function(volunteer) { %>
-		<div class="item content">
-			<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.volunteer, showDelete: true, id: volunteer.id}) %>
-			<%~ include('key-value-item', {
-				label: it.resume.settings?.labels?.categoryProperty?.volunteer?.organization, 
-				value: volunteer.organization,
-				showLabel: false,
-				id: 'volunteer-organization',
-			}) %>
-			<%~ include('date-range', {
-				formatDate: it.formatDate,
-				startDate: volunteer.startDate,
-				endDate: volunteer.endDate,
-				present: volunteer.present,
-				showLabel: false,
-				settings: it.resume.settings
-			}) %>
-			<%~ include('key-value-item', {
-				label: it.resume.settings?.labels?.categoryProperty?.volunteer?.position, 
-				value: volunteer.position,
-				showLabel: false,
-				id: 'volunteer-position',
-			}) %>
-			<%~ include('key-value-item', {
-				label: it.resume.settings?.labels?.categoryProperty?.volunteer?.website, 
-				value: volunteer.website,
-				showLabel: false,
-				id: 'volunteer-website',
-			}) %>
-			<%~ include('key-value-item', {
-				label: it.resume.settings?.labels?.categoryProperty?.volunteer?.summary, 
-				value: volunteer.summary,
-				showLabel: false,
-				id: 'volunteer-summary',
-			}) %>
-			<%~ include('list', {
-				label: it.resume.settings?.labels?.categoryProperty?.volunteer?.highlights, 
-				data: volunteer.highlights,
-				showLabel: false,
-				id: 'volunteer-highlights',
-			}) %>
-		</div>
-	<% }) %>
+	<div class="volunteer__container grid">
+		<% it.resume?.volunteer.forEach(function(volunteer) { %>
+			<div class="box">
+				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.volunteer, showDelete: true, id: volunteer.id}) %>
+				<%~ include('key-value-item', {
+					label: it.resume.settings?.labels?.categoryProperty?.volunteer?.organization, 
+					value: volunteer.organization,
+					showLabel: false,
+					classes: 'volunteer__organization',
+				}) %>
+				<%~ include('date-range', {
+					formatDate: it.formatDate,
+					startDate: volunteer.startDate,
+					endDate: volunteer.endDate,
+					present: volunteer.present,
+					showLabel: false,
+					settings: it.resume.settings
+				}) %>
+				<%~ include('key-value-item', {
+					label: it.resume.settings?.labels?.categoryProperty?.volunteer?.position, 
+					value: volunteer.position,
+					showLabel: false,
+					classes: 'volunteer__position',
+				}) %>
+				<%~ include('key-value-item', {
+					label: it.resume.settings?.labels?.categoryProperty?.volunteer?.website, 
+					value: volunteer.website,
+					showLabel: false,
+					classes: 'volunteer__website',
+				}) %>
+				<%~ include('key-value-item', {
+					label: it.resume.settings?.labels?.categoryProperty?.volunteer?.summary, 
+					value: volunteer.summary,
+					showLabel: false,
+					classes: 'volunteer__description',
+				}) %>
+				<%~ include('list', {
+					label: it.resume.settings?.labels?.categoryProperty?.volunteer?.highlights, 
+					data: volunteer.highlights,
+					showLabel: false,
+					classes: 'volunteer__highlights',
+				}) %>
+			</div>	
+		<% }) %>
+	</div>
 	<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.volunteer}) %>
 </section>

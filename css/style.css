@@ -1,4 +1,5 @@
 /*===== VARIABLES CSS =====*/
+
 :root {
     --header-height: 3rem;
     /*========== COLORS ==========*/
@@ -251,7 +252,7 @@ img {
 
 /*========== PROFILE SECTION ==========*/
 
-.awards__container {
+.awards__container, .profile__container {
     row-gap: var(--mb-1);
 }
 
@@ -292,7 +293,74 @@ img {
     margin: var(--mb-0-5) 0;
 }
 
-/*========== LANGUAGE SECTION ==========*/
+/*========== PROJECTS SECTION ==========*/
+
+.project__container, .education__container, .publications__container, .references__container, .volunteer__container, .certifications__container {
+    row-gap: var(--mb-2);
+}
+
+.project__website {
+    font-size: var(--small-font-size);
+}
+
+.project__title, .publication__name {
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-medium);
+}
+
+.project__client, .publication__publisher, .reference__name, .certificate__title {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+}
+
+.project__description, .publication__description, .reference__reference, .volunteer__description, .volunteer__highlights {
+    margin-top: var(--mb-0-5);
+}
+
+.box1 {
+    margin-top: var(--mb-1);
+    row-gap: var(--mb-0-75);
+}
+
+/*========== EDUCATION SECTION ==========*/
+
+.education__institution {
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-medium);
+}
+
+.education__area {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+}
+
+.education__gpa {
+    font-size: var(--h3-font-size);
+}
+
+.education__courses {
+    margin-top: var(--mb-1);
+}
+
+/*========== VOLUNTEER SECTION ==========*/
+
+.volunteer__organization {
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-medium);
+}
+
+.volunteer__position {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+}
+
+.certificate__issuer {
+    font-weight: var(--font-medium);
+}
+
+/*==========  SECTION ==========*/
+
+/*==========  SECTION ==========*/
 
 /*========== MEDIA QUERIES ==========*/
 
@@ -306,5 +374,10 @@ img {
 @media screen and (min-width: 878px) {
     .main {
         margin: auto;
+    }
+    .box2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3rem;
     }
 }
