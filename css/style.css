@@ -163,7 +163,8 @@ img {
 }
 
 .container {
-    max-width: 968px;
+    /* max-width: 968px; */
+    max-width: 1024px;
     width: calc(100% - 3rem);
     margin-left: var(--mb-1-5);
     margin-right: var(--mb-1-5);
@@ -183,7 +184,9 @@ img {
 }
 
 /*========== HOME SECTION ==========*/
-
+.home__container{
+    row-gap: var(--mb-0-25);
+}
 .home__img {
     border-radius: 50%;
     display: block;

@@ -23,7 +23,7 @@
                 }) %>
             </div>
         </div>
-        <div class="section__container grid">
+        <div class="home__container grid">
             <%~ include('key-value-item', {
                 label: it.resume.settings?.labels?.categoryProperty?.basics?.phone, 
                 value: it.resume.basics.phone,
