@@ -2,7 +2,7 @@
 	<% if (it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle) { %>
 		<h3 class="section__title"><%= it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle %></h3>
 	<% } %>
-	<div class="certifications__container grid">
+	<div class="section__container grid">
 		<% it.resume?.certifications.forEach(function(certificate) { %>
 			<div class="box">
 				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>

@@ -2,7 +2,7 @@
 	<% if (it.resume.settings?.labels?.categoryProperty?.project?.categoryTitle) { %>
 		<h3 class="section__title"><%= it.resume.settings?.labels?.categoryProperty?.project?.categoryTitle %></h3>
 	<% } %>
-	<div class="project__container grid">
+	<div class="section__container grid">
 		<% it.resume?.projects.forEach(function(project) { %>
 			<div class="box">
 				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.project, showDelete: true, id: project.id}) %>
@@ -37,7 +37,7 @@
 					label: it.resume.settings?.labels?.categoryProperty?.project?.summary, 
 					value: project.summary,
 					showLabel: false,
-					classes: 'project__description',
+					classes: 'section__description',
 				}) %>
 				<div class="box1 grid">
 					<%~ include('list', {

@@ -48,12 +48,6 @@
 						resume: it.resume,
 						formatDate: it.formatDate
 					}) %>
-					
-					<!-- REFERENCE -->
-					<%~ include("reference", {
-						resume: it.resume,
-						formatDate: it.formatDate
-					}) %>
 				</div>
 				<div class="right">
 					<!-- SKILLS -->
@@ -94,6 +88,12 @@
 					
 					<!-- CERTIFICATION -->
 					<%~ include("certification", {
+						resume: it.resume,
+						formatDate: it.formatDate
+					}) %>
+					
+					<!-- REFERENCE -->
+					<%~ include("reference", {
 						resume: it.resume,
 						formatDate: it.formatDate
 					}) %>

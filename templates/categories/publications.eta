@@ -4,7 +4,7 @@
 		    <%= it.resume.settings.labels.categoryProperty.publication.categoryTitle %>
 		</h3>
 	<% } %>
-    <div class="publications__container grid">
+    <div class="section__container grid">
 	    <% it.resume?.publications.forEach(function(publication) { %>
 			<div class="box">
                 <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.publication, id: publication.id, showDelete: true}) %>
@@ -36,7 +36,7 @@
                     label: it.resume.settings?.labels?.categoryProperty?.publication?.summary, 
                     value: publication.summary,
                     showLabel: false,
-                    classes: 'publication__description',
+                    classes: 'section__description',
                 }) %>
             </div>
 	    <% }) %>

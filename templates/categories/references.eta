@@ -18,7 +18,7 @@
 					label: it.resume.settings?.labels?.categoryProperty?.reference?.reference, 
 					value: reference.reference,
 					showLabel: false,
-					classes: 'reference__reference',
+					classes: 'section__description',
 				}) %>
 			</div>
 		<% }) %>

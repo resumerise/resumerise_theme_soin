@@ -216,10 +216,6 @@ img {
     margin-top: var(--mb-0-5);
 }
 
-.section__container {
-    row-gap: var(--mb-0-25);
-}
-
 /*========== SKILLS SECTION ==========*/
 
 .skills__info {
@@ -283,6 +279,7 @@ img {
 
 .work__title {
     color: var(--black-color);
+    font-size: var(--h2-font-size);
 }
 
 .work__position {
@@ -295,7 +292,7 @@ img {
 
 /*========== PROJECTS SECTION ==========*/
 
-.project__container, .education__container, .publications__container, .references__container, .volunteer__container, .certifications__container {
+.section__container {
     row-gap: var(--mb-2);
 }
 
@@ -304,7 +301,7 @@ img {
 }
 
 .project__title, .publication__name {
-    font-size: var(--h1-font-size);
+    font-size: var(--h2-font-size);
     font-weight: var(--font-medium);
 }
 
@@ -313,7 +310,7 @@ img {
     font-weight: var(--font-medium);
 }
 
-.project__description, .publication__description, .reference__reference, .volunteer__description, .volunteer__highlights {
+.section__description {
     margin-top: var(--mb-0-5);
 }
 
@@ -358,10 +355,6 @@ img {
     font-weight: var(--font-medium);
 }
 
-/*==========  SECTION ==========*/
-
-/*==========  SECTION ==========*/
-
 /*========== MEDIA QUERIES ==========*/
 
 @media screen and (max-width: 330px) {
@@ -375,9 +368,21 @@ img {
     .main {
         margin: auto;
     }
+    .box3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        column-gap: .5rem;
+    }
     .box2 {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 3rem;
+    }
+    .section__title {
+        text-align: initial;
+    }
+    .home__summary {
+        margin-top: var(--mb-1-5);
     }
 }

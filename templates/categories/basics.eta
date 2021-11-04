@@ -1,46 +1,48 @@
 <section class='section home'>
-    <div class="box">
+    <div class="box3">
         <%~ include('profile-picture', {
             picture: it.resume.basics.picture
         }) %>
-        <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
-        <% if (it.resume.settings?.labels?.categoryProperty?.basics?.categoryTitle) { %>
-            <h3 class="home-title"><%= it.resume.settings.labels.categoryProperty.basics.categoryTitle %></h3>
-        <% } %>
-        <div class="home__data">
+        <div class="box">
+            <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
+            <% if (it.resume.settings?.labels?.categoryProperty?.basics?.categoryTitle) { %>
+                <h3 class="home-title"><%= it.resume.settings.labels.categoryProperty.basics.categoryTitle %></h3>
+            <% } %>
+            <div class="home__data">
+                <%~ include('key-value-item', {
+                    label: it.resume.settings?.labels?.categoryProperty?.basics?.name, 
+                    value: it.resume.basics.name,
+                    showLabel: false,
+                    classes: 'home__title'
+                }) %>
+                <%~ include('key-value-item', {
+                    label: it.resume.settings?.labels?.categoryProperty?.basics?.label, 
+                    value: it.resume.basics.label,
+                    showLabel: false,
+                    classes: 'home__subtitle'
+                }) %>
+            </div>
+        </div>
+        <div class="section__container grid">
             <%~ include('key-value-item', {
-                label: it.resume.settings?.labels?.categoryProperty?.basics?.name, 
-                value: it.resume.basics.name,
+                label: it.resume.settings?.labels?.categoryProperty?.basics?.phone, 
+                value: it.resume.basics.phone,
                 showLabel: false,
-                classes: 'home__title'
+                classes: 'home__info'
             }) %>
             <%~ include('key-value-item', {
-                label: it.resume.settings?.labels?.categoryProperty?.basics?.label, 
-                value: it.resume.basics.label,
+                label: it.resume.settings?.labels?.categoryProperty?.basics?.website, 
+                value: it.resume.basics.website,
                 showLabel: false,
-                classes: 'home__subtitle'
+                classes: 'home__info'
+            }) %>
+            <%~ include('key-value-item', {
+                label: it.resume.settings?.labels?.categoryProperty?.basics?.email, 
+                value: it.resume.basics.email,
+                showLabel: false,
+                classes: 'home__info'
             }) %>
         </div>
-    </div>
-    <div class="section__container grid">
-        <%~ include('key-value-item', {
-            label: it.resume.settings?.labels?.categoryProperty?.basics?.phone, 
-            value: it.resume.basics.phone,
-            showLabel: false,
-            classes: 'home__info'
-        }) %>
-        <%~ include('key-value-item', {
-            label: it.resume.settings?.labels?.categoryProperty?.basics?.website, 
-            value: it.resume.basics.website,
-            showLabel: false,
-            classes: 'home__info'
-        }) %>
-        <%~ include('key-value-item', {
-            label: it.resume.settings?.labels?.categoryProperty?.basics?.email, 
-            value: it.resume.basics.email,
-            showLabel: false,
-            classes: 'home__info'
-        }) %>
     </div>
     <%~ include('key-value-item', {
         label: it.resume.settings?.labels?.categoryProperty?.basics?.summary, 
