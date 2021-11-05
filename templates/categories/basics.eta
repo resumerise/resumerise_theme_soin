@@ -1,9 +1,9 @@
 <section class='section home'>
     <div class="box3">
-        <%~ include('profile-picture', {
-            picture: it.resume.basics.picture
-        }) %>
         <div class="box">
+            <%~ include('profile-picture', {
+                picture: it.resume.basics.picture
+            }) %>
             <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
             <% if (it.resume.settings?.labels?.categoryProperty?.basics?.categoryTitle) { %>
                 <h3 class="home-title"><%= it.resume.settings.labels.categoryProperty.basics.categoryTitle %></h3>
