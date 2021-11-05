@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
 /*===== VARIABLES CSS =====*/
 
 :root {
@@ -79,7 +79,7 @@ body {
     background-color: var(--body-color);
     font-size: var(--normal-font-size);
     color: var(--black-color);
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--body-font);
 }
 
 h1, h2, h3, ul, p {
