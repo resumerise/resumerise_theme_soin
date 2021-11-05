@@ -44,7 +44,6 @@
                     showLabel: false,
                 }) %>
             </div>
-            <hr>
         <% }) %>
     </div>
     <%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>

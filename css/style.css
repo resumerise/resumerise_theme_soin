@@ -113,15 +113,6 @@ img {
     height: auto;
 }
 
-hr {
-    background: #d7d7d7;
-    border: 1px solid #d7d7d7;
-    border-radius: 50%;
-    width: 80%;
-    display: block;
-    margin: 2.5rem auto 0;
-}
-
 /*========== CLASS CSS ==========*/
 
 .section {
@@ -170,12 +161,16 @@ hr {
 
 .hide {
     display: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
 }
 
 /*========== LAYOUT ==========*/
 
 .grid {
+    display: -ms-grid;
     display: grid;
     gap: var(--mb-0-75);
 }
@@ -380,15 +375,6 @@ hr {
     font-weight: var(--font-medium);
 }
 
-.work__container hr:nth-last-child(1),
-.awards__container hr:nth-last-child(1),
-.section__container hr:nth-last-child(1),
-.education__container hr:nth-last-child(1),
-.publications__container hr:nth-last-child(1) {
-    display: none;
-    user-select: none;
-}
-
 /*========== MEDIA QUERIES ==========*/
 
 @media screen and (max-width: 330px) {
@@ -406,14 +392,24 @@ hr {
         text-align: initial;
     }
     .box3 {
+        display: -ms-grid;
         display: grid;
+        -ms-grid-columns: 1fr .5rem 1fr .5rem 1fr;
         grid-template-columns: repeat(3, 1fr);
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-column-gap: .5rem;
+        -moz-column-gap: .5rem;
         column-gap: .5rem;
     }
     .box2 {
+        display: -ms-grid;
         display: grid;
+        -ms-grid-columns: 1fr 3rem 1fr;
         grid-template-columns: repeat(2, 1fr);
+        -webkit-column-gap: 3rem;
+        -moz-column-gap: 3rem;
         column-gap: 3rem;
     }
     .section__title {

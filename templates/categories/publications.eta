@@ -39,7 +39,6 @@
                     classes: 'section__description',
                 }) %>
             </div>
-            <hr>
 	    <% }) %>
     </div>
 	<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.publication}) %>

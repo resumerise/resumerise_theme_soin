@@ -60,7 +60,6 @@
 					}) %>
 				</div>
 			</div>
-			<hr>
 		<% }) %>	
 	</div>
 	<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.project}) %>

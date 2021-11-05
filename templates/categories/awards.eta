@@ -33,7 +33,6 @@
 					classes: 'award__summary'
 				}) %>
 			</div>
-			<hr>
 		<% }) %>
 	</div>
 	<%~ include('add', {categoryKey: it.resume.settings?.categoryKeys?.award}) %>

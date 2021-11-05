@@ -47,8 +47,7 @@
 					showLabel: false,
 					classes: 'education__courses'
 				}) %>
-			</div>	
-			<hr>
+			</div>
 		<% }) %>		
 	</div>
 	<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.education}) %>
