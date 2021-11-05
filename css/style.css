@@ -377,14 +377,6 @@ img {
     font-weight: var(--font-medium);
 }
 
-<<<<<<< HEAD
-=======
-.work__container hr:nth-last-child(1), .awards__container hr:nth-last-child(1), .section__container hr:nth-last-child(1), .education__container hr:nth-last-child(1), .publications__container hr:nth-last-child(1) {
-    display: none;
-    user-select: none;
-}
-
->>>>>>> 19171b566e57042e35ddcf772255ce3f79e81684
 /*========== MEDIA QUERIES ==========*/
 
 @media screen and (max-width: 330px) {
