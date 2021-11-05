@@ -8,11 +8,6 @@
 		<style>
 			<%~ it.css %>
 			<%~ it.widgetCss %>
-			
-			@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Zen+Antique+Soft&display=swap');
-			body {
-				font-family: 'Poppins', sans-serif;
-			}
 		</style>
 	</head>
 	<body>

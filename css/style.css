@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 /*===== VARIABLES CSS =====*/
 
 :root {
@@ -78,6 +79,7 @@ body {
     background-color: var(--body-color);
     font-size: var(--normal-font-size);
     color: var(--black-color);
+    font-family: 'Poppins', sans-serif;
 }
 
 h1, h2, h3, ul, p {
@@ -380,11 +382,7 @@ hr {
     font-weight: var(--font-medium);
 }
 
-.work__container hr:nth-last-child(1),
-.awards__container hr:nth-last-child(1),
-.section__container hr:nth-last-child(1),
-.education__container hr:nth-last-child(1),
-.publications__container hr:nth-last-child(1) {
+.work__container hr:nth-last-child(1), .awards__container hr:nth-last-child(1), .section__container hr:nth-last-child(1), .education__container hr:nth-last-child(1), .publications__container hr:nth-last-child(1) {
     display: none;
     user-select: none;
 }
