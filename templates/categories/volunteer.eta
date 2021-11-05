@@ -14,6 +14,12 @@
 					showLabel: false,
 					classes: 'volunteer__organization',
 				}) %>
+				<%~ include('key-value-item', {
+					label: it.resume.settings?.labels?.categoryProperty?.volunteer?.position, 
+					value: volunteer.position,
+					showLabel: false,
+					classes: 'volunteer__position',
+				}) %>
 				<%~ include('date-range', {
 					formatDate: it.formatDate,
 					startDate: volunteer.startDate,
@@ -23,16 +29,10 @@
 					settings: it.resume.settings
 				}) %>
 				<%~ include('key-value-item', {
-					label: it.resume.settings?.labels?.categoryProperty?.volunteer?.position, 
-					value: volunteer.position,
-					showLabel: false,
-					classes: 'volunteer__position',
-				}) %>
-				<%~ include('key-value-item', {
 					label: it.resume.settings?.labels?.categoryProperty?.volunteer?.website, 
 					value: volunteer.website,
 					showLabel: false,
-					classes: 'volunteer__website',
+					classes: 'hide',
 				}) %>
 				<%~ include('key-value-item', {
 					label: it.resume.settings?.labels?.categoryProperty?.volunteer?.summary, 
@@ -44,7 +44,6 @@
 					label: it.resume.settings?.labels?.categoryProperty?.volunteer?.highlights, 
 					data: volunteer.highlights,
 					showLabel: false,
-					classes: 'section__description',
 				}) %>
 			</div>	
 		<% }) %>

@@ -30,7 +30,7 @@
                     label: it.resume.settings?.labels?.categoryProperty?.work?.website, 
                     value: work.website,
                     showLabel: false,
-                    classes: 'work__website',
+                    classes: 'hide',
                 }) %>
                 <%~ include('key-value-item', {
                     label: it.resume.settings?.labels?.categoryProperty?.work?.summary, 
@@ -44,6 +44,7 @@
                     showLabel: false,
                 }) %>
             </div>
+            <hr>
         <% }) %>
     </div>
     <%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>

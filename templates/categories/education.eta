@@ -20,7 +20,8 @@
 					endDate: education.endDate,
 					present: education.present,
 					showLabel: false,
-					settings: it.resume.settings
+					settings: it.resume.settings,
+					classes: 'hide'
 				}) %>
 				<%~ include('key-value-item', {
 					label: it.resume.settings?.labels?.categoryProperty?.education?.area, 
@@ -47,6 +48,7 @@
 					classes: 'education__courses'
 				}) %>
 			</div>	
+			<hr>
 		<% }) %>		
 	</div>
 	<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.education}) %>

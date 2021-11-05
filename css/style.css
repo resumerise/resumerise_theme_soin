@@ -113,6 +113,15 @@ img {
     height: auto;
 }
 
+hr {
+    background: #d7d7d7;
+    border: 1px solid #d7d7d7;
+    border-radius: 50%;
+    width: 80%;
+    display: block;
+    margin: 2.5rem auto 0;
+}
+
 /*========== CLASS CSS ==========*/
 
 .section {
@@ -155,6 +164,15 @@ img {
     list-style: circle;
 }
 
+.date {
+    font-weight: 300;
+}
+
+.hide {
+    display: none;
+    user-select: none;
+}
+
 /*========== LAYOUT ==========*/
 
 .grid {
@@ -184,9 +202,11 @@ img {
 }
 
 /*========== HOME SECTION ==========*/
-.home__container{
+
+.home__container {
     row-gap: var(--mb-0-25);
 }
+
 .home__img {
     border-radius: 50%;
     display: block;
@@ -270,6 +290,7 @@ img {
 .interest__name {
     font-weight: var(--font-medium);
     font-size: var(--h3-font-size);
+    text-transform: capitalize;
 }
 
 /*========== LANGUAGE SECTION ==========*/
@@ -287,6 +308,7 @@ img {
 
 .work__position {
     font-weight: var(--font-medium);
+    font-size: 1.1rem;
 }
 
 .work__summary {
@@ -358,6 +380,15 @@ img {
     font-weight: var(--font-medium);
 }
 
+.work__container hr:nth-last-child(1),
+.awards__container hr:nth-last-child(1),
+.section__container hr:nth-last-child(1),
+.education__container hr:nth-last-child(1),
+.publications__container hr:nth-last-child(1) {
+    display: none;
+    user-select: none;
+}
+
 /*========== MEDIA QUERIES ==========*/
 
 @media screen and (max-width: 330px) {
@@ -370,6 +401,9 @@ img {
 @media screen and (min-width: 878px) {
     .main {
         margin: auto;
+    }
+    .home__title, .home__subtitle, .home__summary {
+        text-align: initial;
     }
     .box3 {
         display: grid;

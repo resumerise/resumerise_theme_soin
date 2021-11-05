@@ -10,7 +10,7 @@
 					label: it.resume.settings?.labels?.categoryProperty?.project?.website, 
 					value: project.website,
 					showLabel: false,
-					classes: 'project__website',
+					classes: 'hide',
 				}) %>
 				<%~ include('key-value-item', {
 					label: it.resume.settings?.labels?.categoryProperty?.project?.title, 
@@ -60,6 +60,7 @@
 					}) %>
 				</div>
 			</div>
+			<hr>
 		<% }) %>	
 	</div>
 	<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.project}) %>
