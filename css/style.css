@@ -205,6 +205,7 @@ img {
 
 .home__container {
     row-gap: var(--mb-0-25);
+    margin: var(--mb-1) 0;
 }
 
 .home__img {
@@ -232,7 +233,7 @@ img {
     font-size: var(--h2-font-size);
 }
 
-.home__title, .home__subtitle, .home__summary {
+., .home__title, .home__subtitle, .home__summary {
     text-align: center;
 }
 
@@ -436,7 +437,8 @@ img {
         -moz-column-gap: 3rem;
         column-gap: 3rem;
     }
-    .section__title {
+    .section__title,
+    .home__container {
         text-align: initial;
     }
     .home__summary {
