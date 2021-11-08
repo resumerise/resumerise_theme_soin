@@ -1,5 +1,6 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 /*===== VARIABLES CSS =====*/
 
 :root {
@@ -95,7 +96,7 @@ h1, h2, h3 {
 }
 
 h4 {
-    font-weight: var(--font-semi-bold);
+    font-weight: var(--font-medium);
     font-size: var(--h1-font-size);
     color: var(--text-color-light);
     margin: var(--mb-1-5) 0 0;
@@ -225,7 +226,7 @@ img {
 .home__title {
     font-size: var(--h1-font-size);
     color: var(--black-color);
-    font-weight: 600;
+    font-weight: 700;
     margin-right: 1rem;
 }
 
