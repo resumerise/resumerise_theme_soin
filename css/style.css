@@ -1,5 +1,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap'); */
+
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 /*===== VARIABLES CSS =====*/
 
@@ -396,8 +398,7 @@ img {
     .main {
         margin: auto;
     }
-
-    .home__data{
+    .home__data {
         display: grid;
         row-gap: 1rem;
     }
@@ -438,8 +439,62 @@ img {
         -moz-column-gap: 3rem;
         column-gap: 3rem;
     }
-    .section__title,
-    .home__container {
+    .section__title, .home__container {
+        text-align: initial;
+    }
+    .home__summary {
+        margin-top: var(--mb-1-5);
+    }
+}
+
+/*========== MEDIA PRINT ==========*/
+
+@media print {
+    .main {
+        margin: auto;
+    }
+    .home__data {
+        display: grid;
+        row-gap: 1rem;
+    }
+    .home__title, .home__subtitle, .home__summary {
+        line-height: .9;
+        text-align: initial;
+    }
+    .home__wrapper {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-column-gap: .1rem;
+        -moz-column-gap: .1rem;
+        column-gap: .1rem;
+    }
+    .home__section {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-column-gap: .5rem;
+        -moz-column-gap: .5rem;
+        column-gap: .5rem;
+    }
+    .box2 {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 3rem 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        -webkit-column-gap: 3rem;
+        -moz-column-gap: 3rem;
+        column-gap: 3rem;
+    }
+    .section__title, .home__container {
         text-align: initial;
     }
     .home__summary {
