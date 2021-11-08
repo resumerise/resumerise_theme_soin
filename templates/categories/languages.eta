@@ -6,7 +6,7 @@
 	<% } %>
 	<div class="languages__container grid">
 		<% it.resume?.languages.forEach(function(language) { %>
-		<div class="box">
+		<div class="wrapper">
 			<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.language, showDelete: true, id: language.id}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.language?.language, 

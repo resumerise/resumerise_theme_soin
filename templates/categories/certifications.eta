@@ -4,7 +4,7 @@
 	<% } %>
 	<div class="section__container grid">
 		<% it.resume?.certifications.forEach(function(certificate) { %>
-			<div class="box">
+			<div class="wrapper">
 				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
 					<%~ include('key-value-item', {
 					label: it.resume.settings?.labels?.categoryProperty?.certificate?.title, 

@@ -6,7 +6,7 @@
 	<% } %>
     <div class="section__container grid">
 	    <% it.resume?.publications.forEach(function(publication) { %>
-			<div class="box">
+			<div class="wrapper">
                 <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.publication, id: publication.id, showDelete: true}) %>
                 <%~ include('key-value-item', {
                     label: it.resume.settings?.labels?.categoryProperty?.publication?.name, 

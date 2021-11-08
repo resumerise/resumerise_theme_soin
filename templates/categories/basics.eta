@@ -1,6 +1,6 @@
 <section class='section home'>
-    <div class="box3">
-        <div class="box6">
+    <div class="home__section">
+        <div class="home__wrapper">
             <%~ include('profile-picture', {
                 picture: it.resume.basics.picture
             }) %>

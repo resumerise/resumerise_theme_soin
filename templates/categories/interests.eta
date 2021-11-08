@@ -6,7 +6,7 @@
 	<% } %>
 	<div class="interests__container grid">
 		<% it.resume?.interests.forEach(function(interest) { %>
-		<div class="box">
+		<div class="wrapper">
 			<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.interest, showDelete: true, id: interest.id}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.interest?.name, 

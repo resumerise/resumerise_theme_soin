@@ -2,7 +2,7 @@
     <% if (it.resume.settings?.labels?.categoryProperty?.location?.categoryTitle) { %>
         <h1><%= it.resume.settings?.labels?.categoryProperty?.location?.categoryTitle %></h1>
     <% } %>
-    <div class="content">
+    <div class="location__container">
         <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.location}) %>
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.location?.address, 

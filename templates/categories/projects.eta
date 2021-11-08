@@ -4,7 +4,7 @@
 	<% } %>
 	<div class="section__container grid">
 		<% it.resume?.projects.forEach(function(project) { %>
-			<div class="box">
+			<div class="wrapper">
 				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.project, showDelete: true, id: project.id}) %>
 				<%~ include('key-value-item', {
 					label: it.resume.settings?.labels?.categoryProperty?.project?.website, 
@@ -39,7 +39,7 @@
 					showLabel: false,
 					classes: 'section__description',
 				}) %>
-				<div class="box1 grid">
+				<div class="project__wrapper grid">
 					<%~ include('list', {
 						label: it.resume.settings?.labels?.categoryProperty?.project?.products, 
 						data: project.products,

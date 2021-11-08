@@ -4,7 +4,7 @@
     <% } %>
     <div class="work__container grid">
         <% it.resume?.work.forEach(function(work) { %>
-            <div class="box">
+            <div class="wrapper">
                 <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work, showDelete: true, id: work.id}) %>
                 <% if (work.company) { %>
                 <h4 class="work__title">
