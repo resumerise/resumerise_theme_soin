@@ -233,7 +233,7 @@ img {
     font-size: var(--h2-font-size);
 }
 
-., .home__title, .home__subtitle, .home__summary {
+.home__title, .home__subtitle, .home__summary {
     text-align: center;
 }
 
