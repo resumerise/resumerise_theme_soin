@@ -24,7 +24,7 @@
                     label: it.resume.settings?.labels?.categoryProperty?.publication?.publisher, 
                     value: publication.publisher,
                     showLabel: false,
-                    classes: 'publication__publisher',
+                    classes: 'wrapper__subtitle',
                 }) %>
                 <%~ include('key-value-item', {
                     label: it.resume.settings?.labels?.categoryProperty?.publication?.website, 

@@ -31,7 +31,7 @@
 					label: it.resume.settings?.labels?.categoryProperty?.project?.client, 
 					value: project.client,
 					showLabel: false,
-					classes: 'project__client'
+					classes: 'wrapper__subtitle'
 				}) %>
 				<%~ include('key-value-item', {
 					label: it.resume.settings?.labels?.categoryProperty?.project?.summary, 
