@@ -236,7 +236,7 @@ img {
     font-size: var(--h2-font-size);
 }
 
-.home__title, .home__subtitle, .home__summary {
+.home__title, .home__subtitle, .home__summary, .home__container {
     text-align: center;
 }
 
@@ -383,6 +383,13 @@ img {
 
 .certificate__issuer {
     font-weight: var(--font-medium);
+}
+
+.references{
+    padding: 2rem 0 0;
+}
+.skills{
+    padding: 2rem 0 2rem;
 }
 
 /*========== MEDIA QUERIES ==========*/
