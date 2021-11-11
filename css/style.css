@@ -301,7 +301,8 @@ img {
 
 /*========== FIXES SECTION ==========*/
 
-.references {
+.references,
+.certifications {
     padding: 2rem 0 0;
 }
 
