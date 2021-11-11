@@ -1,47 +1,53 @@
-<section id='basics'>
-    <%~ include('profile-picture', {
-        picture: it.resume.basics.picture
-    }) %>
-    <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
-    <% if (it.resume.settings?.labels?.categoryProperty?.basics?.categoryTitle) { %>
-        <h1><%= it.resume.settings.labels.categoryProperty.basics.categoryTitle %></h1>
-    <% } %>
-    <div class="content">
-        <%~ include('key-value-item', {
-            label: it.resume.settings?.labels?.categoryProperty?.basics?.name, 
-            value: it.resume.basics.name,
-            showLabel: false,
-            id: 'basics-name'
-        }) %>
-        <%~ include('key-value-item', {
-            label: it.resume.settings?.labels?.categoryProperty?.basics?.website, 
-            value: it.resume.basics.website,
-            showLabel: false,
-            id: 'basics-website'
-        }) %>
-        <%~ include('key-value-item', {
-            label: it.resume.settings?.labels?.categoryProperty?.basics?.label, 
-            value: it.resume.basics.label,
-            showLabel: false,
-            id: 'basics-label'
-        }) %>
-        <%~ include('key-value-item', {
-            label: it.resume.settings?.labels?.categoryProperty?.basics?.email, 
-            value: it.resume.basics.email,
-            showLabel: false,
-            id: 'basics-email'
-        }) %>
-        <%~ include('key-value-item', {
-            label: it.resume.settings?.labels?.categoryProperty?.basics?.phone, 
-            value: it.resume.basics.phone,
-            showLabel: false,
-            id: 'basics-phone'
-        }) %>
-        <%~ include('key-value-item', {
-            label: it.resume.settings?.labels?.categoryProperty?.basics?.summary, 
-            value: it.resume.basics.summary,
-            showLabel: false,
-            id: 'basics-summary'
-        }) %>
+<section class='section home' id="basic">
+    <div class="home__section">
+        <div class="home__wrapper">
+            <%~ include('profile-picture', {
+                picture: it.resume.basics.picture
+            }) %>
+            <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
+            <% if (it.resume.settings?.labels?.categoryProperty?.basics?.categoryTitle) { %>
+                <h3 class="home-title"><%= it.resume.settings.labels.categoryProperty.basics.categoryTitle %></h3>
+            <% } %>
+            <div class="home__data">
+                <%~ include('key-value-item', {
+                    label: it.resume.settings?.labels?.categoryProperty?.basics?.name, 
+                    value: it.resume.basics.name,
+                    showLabel: false,
+                    classes: 'home__title'
+                }) %>
+                <%~ include('key-value-item', {
+                    label: it.resume.settings?.labels?.categoryProperty?.basics?.label, 
+                    value: it.resume.basics.label,
+                    showLabel: false,
+                    classes: 'home__subtitle'
+                }) %>
+            </div>
+        </div>
+        <div class="home__container grid">
+            <%~ include('key-value-item', {
+                label: it.resume.settings?.labels?.categoryProperty?.basics?.phone, 
+                value: it.resume.basics.phone,
+                showLabel: false,
+                classes: 'home__info'
+            }) %>
+            <%~ include('key-value-item', {
+                label: it.resume.settings?.labels?.categoryProperty?.basics?.website, 
+                value: it.resume.basics.website,
+                showLabel: false,
+                classes: 'home__info'
+            }) %>
+            <%~ include('key-value-item', {
+                label: it.resume.settings?.labels?.categoryProperty?.basics?.email, 
+                value: it.resume.basics.email,
+                showLabel: false,
+                classes: 'home__info'
+            }) %>
+        </div>
     </div>
+    <%~ include('key-value-item', {
+        label: it.resume.settings?.labels?.categoryProperty?.basics?.summary, 
+        value: it.resume.basics.summary,
+        showLabel: false,
+        classes: 'section__summary'
+    }) %>
 </section>

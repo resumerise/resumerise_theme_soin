@@ -1,61 +1,66 @@
-<section id="project">
+<section class="project" id="project">
 	<% if (it.resume.settings?.labels?.categoryProperty?.project?.categoryTitle) { %>
-		<h1><%= it.resume.settings?.labels?.categoryProperty?.project?.categoryTitle %></h1>
+		<h3 class="section__title"><%= it.resume.settings?.labels?.categoryProperty?.project?.categoryTitle %></h3>
 	<% } %>
-	<% it.resume?.projects.forEach(function(project) { %>
-		<div class="item content">
-			<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.project, showDelete: true, id: project.id}) %>
-			<%~ include('key-value-item', {
-				label: it.resume.settings?.labels?.categoryProperty?.project?.title, 
-				value: project.title,
-				showLabel: false,
-				id: 'project-title'
-			}) %>
-			<%~ include('key-value-item', {
-				label: it.resume.settings?.labels?.categoryProperty?.project?.client, 
-				value: project.client,
-				showLabel: false,
-				id: 'project-client'
-			}) %>
-			<%~ include('date-range', {
-				formatDate: it.formatDate,
-				startDate: project.startDate,
-				endDate: project.endDate,
-				present: project.present,
-				settings: it.resume.settings,
-				showLabel: false,
-			}) %>
-			<%~ include('key-value-item', {
-				label: it.resume.settings?.labels?.categoryProperty?.project?.summary, 
-				value: project.summary,
-				showLabel: false,
-				id: 'project-summary',
-			}) %>
-			<%~ include('key-value-item', {
-				label: it.resume.settings?.labels?.categoryProperty?.project?.website, 
-				value: project.website,
-				showLabel: false,
-				id: 'project-website',
-			}) %>
-			<%~ include('list', {
-				label: it.resume.settings?.labels?.categoryProperty?.project?.products, 
-				data: project.products,
-				showLabel: false,
-				id: 'project-products',
-			}) %>
-			<%~ include('list', {
-				label: it.resume.settings?.labels?.categoryProperty?.project?.roles, 
-				data: project.roles,
-				showLabel: false,
-				id: 'project-roles',
-			}) %>
-			<%~ include('list', {
-				label: it.resume.settings?.labels?.categoryProperty?.project?.highlights, 
-				data: project.highlights,
-				showLabel: false,
-				id: 'project-highlights',
-			}) %>
-		</div>
-	<% }) %>
+	<div class="section__container grid">
+		<% it.resume?.projects.forEach(function(project) { %>
+			<div class="wrapper">
+				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.project, showDelete: true, id: project.id}) %>
+				<%~ include('key-value-item', {
+					label: it.resume.settings?.labels?.categoryProperty?.project?.website, 
+					value: project.website,
+					showLabel: false,
+					classes: 'hide',
+				}) %>
+				<%~ include('key-value-item', {
+					label: it.resume.settings?.labels?.categoryProperty?.project?.title, 
+					value: project.title,
+					showLabel: false,
+					classes: 'wrapper__title'
+				}) %>
+				<%~ include('date-range', {
+					formatDate: it.formatDate,
+					startDate: project.startDate,
+					endDate: project.endDate,
+					present: project.present,
+					settings: it.resume.settings,
+					showLabel: false,
+					classes: 'project__date'
+				}) %>
+				<%~ include('key-value-item', {
+					label: it.resume.settings?.labels?.categoryProperty?.project?.client, 
+					value: project.client,
+					showLabel: false,
+					classes: 'wrapper__subtitle'
+				}) %>
+				<%~ include('key-value-item', {
+					label: it.resume.settings?.labels?.categoryProperty?.project?.summary, 
+					value: project.summary,
+					showLabel: false,
+					classes: 'section__description',
+				}) %>
+				<div class="project__wrapper grid">
+					<%~ include('list', {
+						label: it.resume.settings?.labels?.categoryProperty?.project?.products, 
+						data: project.products,
+						showLabel: false,
+						classes: 'project__products',
+					}) %>
+					<%~ include('list', {
+						label: it.resume.settings?.labels?.categoryProperty?.project?.roles, 
+						data: project.roles,
+						showLabel: false,
+						classes: 'project__roles',
+					}) %>
+					<%~ include('list', {
+						label: it.resume.settings?.labels?.categoryProperty?.project?.highlights, 
+						data: project.highlights,
+						showLabel: false,
+						classes: 'project__highlights',
+					}) %>
+				</div>
+			</div>
+		<% }) %>	
+	</div>
 	<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.project}) %>
 </section>

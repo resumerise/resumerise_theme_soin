@@ -1,37 +1,39 @@
-<section id="awards">
+<section class="awards" id="awards">
 	<% if(it.resume.settings?.labels?.categoryProperty?.award?.categoryTitle) { %>
-		<h1>
+		<h3 class="section__title">
 			<%= it.resume.settings.labels.categoryProperty.award.categoryTitle %>
-		</h1>
+		</h3>
 	<% } %>
-	<% it.resume?.awards.forEach(function(award) { %>
-	<div class="item content">
-		<%~ include('nav', {categoryKey: it.resume.settings?.categoryKeys?.award, id: award.id, showDelete: true}) %>
-		<%~ include('key-value-item', {
-			label: it.resume.settings?.labels?.categoryProperty?.award?.title, 
-			value: award.title,
-			showLabel: false,
-			id: 'award-title'
-		}) %>
-		<%~ include('key-value-item', {
-			label: it.resume.settings?.labels?.categoryProperty?.award?.date, 
-			value: it.formatDate(award.date, it.resume.settings),
-			showLabel: false,
-			id: 'award-date'
-		}) %>
-		<%~ include('key-value-item', {
-			label: it.resume.settings?.labels?.categoryProperty?.award?.awarder, 
-			value: award.awarder,
-			showLabel: false,
-			id: 'award-awarder'
-		}) %>
-		<%~ include('key-value-item', {
-			label: it.resume.settings?.labels?.categoryProperty?.award?.summary, 
-			value: award.summary,
-			showLabel: false,
-			id: 'award-summary'
-		}) %>
+	<div class="awards__container grid">
+		<% it.resume?.awards.forEach(function(award) { %>
+			<div class="wrapper">
+				<%~ include('nav', {categoryKey: it.resume.settings?.categoryKeys?.award, id: award.id, showDelete: true}) %>
+				<%~ include('key-value-item', {
+					label: it.resume.settings?.labels?.categoryProperty?.award?.title, 
+					value: award.title,
+					showLabel: false,
+					classes: 'wrapper__title'
+				}) %>
+				<%~ include('key-value-item', {
+					label: it.resume.settings?.labels?.categoryProperty?.award?.date, 
+					value: it.formatDate(award.date, it.resume.settings),
+					showLabel: false,
+					classes: 'award__date'
+				}) %>
+				<%~ include('key-value-item', {
+					label: it.resume.settings?.labels?.categoryProperty?.award?.awarder, 
+					value: award.awarder,
+					showLabel: false,
+					classes: 'wrapper__subtitle'
+				}) %>
+				<%~ include('key-value-item', {
+					label: it.resume.settings?.labels?.categoryProperty?.award?.summary, 
+					value: award.summary,
+					showLabel: false,
+					classes: 'section__summary'
+				}) %>
+			</div>
+		<% }) %>
 	</div>
-	<% }) %>
 	<%~ include('add', {categoryKey: it.resume.settings?.categoryKeys?.award}) %>
 </section>

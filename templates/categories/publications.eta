@@ -1,43 +1,45 @@
-<section id="publications">
+<section class="publications" id="publications">
 	<% if(it.resume.settings?.labels?.categoryProperty?.publication?.categoryTitle) { %>
-		<h1>
+		<h3 class="section__title">
 		    <%= it.resume.settings.labels.categoryProperty.publication.categoryTitle %>
-		</h1>
+		</h3>
 	<% } %>
-	<% it.resume?.publications.forEach(function(publication) { %>
-        <div class="item content">
-            <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.publication, id: publication.id, showDelete: true}) %>
-            <%~ include('key-value-item', {
-                label: it.resume.settings?.labels?.categoryProperty?.publication?.name, 
-                value: publication.name,
-                showLabel: false,
-                id: 'publication-name',
-            }) %>
-            <%~ include('key-value-item', {
-                label: it.resume.settings?.labels?.categoryProperty?.publication?.publisher, 
-                value: publication.publisher,
-                showLabel: false,
-                id: 'publication-publisher',
-            }) %>
-            <%~ include('key-value-item', {
-                label: it.resume.settings?.labels?.categoryProperty?.publication?.releaseDate, 
-                value: it.formatDate(publication.releaseDate, it.resume.settings),
-                showLabel: false,
-                id: 'publication-releaseDate',
-            }) %>
-            <%~ include('key-value-item', {
-                label: it.resume.settings?.labels?.categoryProperty?.publication?.website, 
-                value: publication.website,
-                showLabel: false,
-                id: 'publication-website',
-            }) %>
-            <%~ include('key-value-item', {
-                label: it.resume.settings?.labels?.categoryProperty?.publication?.summary, 
-                value: publication.summary,
-                showLabel: false,
-                id: 'publication-summary',
-            }) %>
-        </div>
-	<% }) %>
+    <div class="section__container grid">
+	    <% it.resume?.publications.forEach(function(publication) { %>
+			<div class="wrapper">
+                <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.publication, id: publication.id, showDelete: true}) %>
+                <%~ include('key-value-item', {
+                    label: it.resume.settings?.labels?.categoryProperty?.publication?.name, 
+                    value: publication.name,
+                    showLabel: false,
+                    classes: 'wrapper__title',
+                }) %>
+                   <%~ include('key-value-item', {
+                    label: it.resume.settings?.labels?.categoryProperty?.publication?.releaseDate, 
+                    value: it.formatDate(publication.releaseDate, it.resume.settings),
+                    showLabel: false,
+                    classes: 'publication__releaseDate',
+                }) %>
+                <%~ include('key-value-item', {
+                    label: it.resume.settings?.labels?.categoryProperty?.publication?.publisher, 
+                    value: publication.publisher,
+                    showLabel: false,
+                    classes: 'wrapper__subtitle',
+                }) %>
+                <%~ include('key-value-item', {
+                    label: it.resume.settings?.labels?.categoryProperty?.publication?.website, 
+                    value: publication.website,
+                    showLabel: false,
+                    classes: 'hide',
+                }) %>
+                <%~ include('key-value-item', {
+                    label: it.resume.settings?.labels?.categoryProperty?.publication?.summary, 
+                    value: publication.summary,
+                    showLabel: false,
+                    classes: 'section__description',
+                }) %>
+            </div>
+	    <% }) %>
+    </div>
 	<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.publication}) %>
 </section>

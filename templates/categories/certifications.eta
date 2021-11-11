@@ -1,29 +1,31 @@
-<section id="certifications">
+<section class="certifications" id="certifications">
 	<% if (it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle) { %>
-		<h1><%= it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle %></h1>
+		<h3 class="section__title"><%= it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle %></h3>
 	<% } %>
-	<% it.resume?.certifications.forEach(function(certificate) { %>
-	<div class="item content">
-		<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
-		<%~ include('key-value-item', {
-			label: it.resume.settings?.labels?.categoryProperty?.certificate?.issueDate, 
-			value: it.formatDate(certificate.issueDate, it.resume.settings),
-			showLabel: false,
-			id: 'certificate-issueDate'
-		}) %>
-		<%~ include('key-value-item', {
-			label: it.resume.settings?.labels?.categoryProperty?.certificate?.issuer, 
-			value: certificate.issuer,
-			showLabel: false,
-			id: 'certificate-issuer',
-		}) %>
-		<%~ include('key-value-item', {
-			label: it.resume.settings?.labels?.categoryProperty?.certificate?.title, 
-			value: certificate.title,
-			showLabel: false,
-			id: 'certificate-title',
-		}) %>
+	<div class="section__container grid">
+		<% it.resume?.certifications.forEach(function(certificate) { %>
+			<div class="wrapper">
+				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
+					<%~ include('key-value-item', {
+					label: it.resume.settings?.labels?.categoryProperty?.certificate?.title, 
+					value: certificate.title,
+					showLabel: false,
+					classes: 'wrapper__title',
+				}) %>
+				<%~ include('key-value-item', {
+					label: it.resume.settings?.labels?.categoryProperty?.certificate?.issueDate, 
+					value: it.formatDate(certificate.issueDate, it.resume.settings),
+					showLabel: false,
+					classes: 'certificate__issueDate'
+				}) %>
+				<%~ include('key-value-item', {
+					label: it.resume.settings?.labels?.categoryProperty?.certificate?.issuer, 
+					value: certificate.issuer,
+					showLabel: false,
+					classes: 'wrapper__subtitle',
+				}) %>
+			</div>
+		<% }) %>
 	</div>
-	<% }) %>
 	<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
 </section>
