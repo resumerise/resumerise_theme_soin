@@ -48,6 +48,6 @@
         label: it.resume.settings?.labels?.categoryProperty?.basics?.summary, 
         value: it.resume.basics.summary,
         showLabel: false,
-        classes: 'home__summary'
+        classes: 'section__summary'
     }) %>
 </section>

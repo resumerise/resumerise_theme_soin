@@ -12,7 +12,7 @@
 					label: it.resume.settings?.labels?.categoryProperty?.education?.institution, 
 					value: education.institution,
 					showLabel: false,
-					classes: 'education__institution'
+					classes: 'wrapper__title'
 				}) %>
 				<%~ include('date-range', {
 					formatDate: it.formatDate, 
@@ -27,7 +27,7 @@
 					label: it.resume.settings?.labels?.categoryProperty?.education?.area, 
 					value: education.area,
 					showLabel: false,
-					classes: 'education__area'
+					classes: 'wrapper__subtitle'
 				}) %>
 				<%~ include('key-value-item', {
 					label: it.resume.settings?.labels?.categoryProperty?.education?.studyType, 

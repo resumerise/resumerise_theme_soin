@@ -145,6 +145,28 @@ img {
     -o-border-radius: 1rem;
 }
 
+.wrapper__title {
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-medium);
+}
+
+.wrapper__subtitle {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+}
+
+.wrapper__title, .wrapper__subtitle {
+    color: var(--black-color);
+}
+
+.section__container {
+    row-gap: var(--mb-2);
+}
+
+.section__description {
+    margin-top: var(--mb-0-5);
+}
+
 .list__label {
     font-weight: var(--font-medium);
 }
@@ -230,14 +252,11 @@ img {
     font-size: var(--h2-font-size);
 }
 
-.home__title,
-.home__subtitle,
-.home__summary,
-.home__container {
+.home__title, .home__subtitle, .home__summary, .home__container {
     text-align: center;
 }
 
-.home__summary {
+.section__summary {
     margin-top: var(--mb-0-5);
 }
 
@@ -251,94 +270,20 @@ img {
     row-gap: var(--mb-0-25);
 }
 
-/*========== AWARDS SECTION ==========*/
+/*========== AWARDS & PROFILE SECTION ==========*/
 
-.award__title {
-    font-size: var(--h2-font-size);
-    font-weight: var(--font-semi-bold);
-}
-
-.award__awarder {
-    font-size: var(--h3-font-size);
-    font-weight: var(--font-medium);
-}
-
-.award__summary {
-    margin-top: var(--mb-0-5);
-}
-
-/*========== PROFILE SECTION ==========*/
-
-.awards__container,
-.profile__container {
+.awards__container, .profile__container {
     row-gap: var(--mb-1);
-}
-
-.profile__network {
-    font-size: var(--h3-font-size);
-    font-weight: var(--font-medium);
-    text-transform: capitalize;
 }
 
 .profile__url {
     font-size: var(--small-font-size);
 }
 
-/*========== INTERESTS SECTION ==========*/
-
-.interest__name {
-    font-weight: var(--font-medium);
-    font-size: var(--h3-font-size);
-    text-transform: capitalize;
-}
-
-/*========== LANGUAGE SECTION ==========*/
-
-.language__name {
-    font-weight: var(--font-medium);
-}
-
 /*========== WORK SECTION ==========*/
 
-.work__title {
-    color: var(--black-color);
-    font-size: var(--h2-font-size);
-}
-
-.work__position {
-    font-weight: var(--font-medium);
-    font-size: 1.1rem;
-}
-
-.work__summary {
-    margin: var(--mb-0-5) 0;
-}
 
 /*========== PROJECTS SECTION ==========*/
-
-.section__container {
-    row-gap: var(--mb-2);
-}
-
-.project__website {
-    font-size: var(--small-font-size);
-}
-
-.project__title,
-.publication__name {
-    font-size: var(--h2-font-size);
-    font-weight: var(--font-medium);
-}
-
-.wrapper__subtitle,
-.certificate__title {
-    font-size: var(--h3-font-size);
-    font-weight: var(--font-medium);
-}
-
-.section__description {
-    margin-top: var(--mb-0-5);
-}
 
 .project__wrapper {
     margin-top: var(--mb-1);
@@ -346,17 +291,6 @@ img {
 }
 
 /*========== EDUCATION SECTION ==========*/
-
-.education__institution {
-    font-size: var(--h2-font-size);
-    font-weight: var(--font-medium);
-}
-
-.education__area {
-    font-size: var(--h3-font-size);
-    font-weight: var(--font-medium);
-}
-
 .education__gpa {
     font-size: var(--h3-font-size);
 }
@@ -365,26 +299,13 @@ img {
     margin-top: var(--mb-1);
 }
 
-/*========== VOLUNTEER SECTION ==========*/
+/*========== FIXES SECTION ==========*/
 
-.volunteer__organization {
-    font-size: var(--h2-font-size);
-    font-weight: var(--font-medium);
-}
-
-.volunteer__position {
-    font-size: var(--h3-font-size);
-    font-weight: var(--font-medium);
-}
-
-.certificate__issuer {
-    font-weight: var(--font-medium);
-}
-
-.references{
+.references {
     padding: 2rem 0 0;
 }
-.skills{
+
+.skills {
     padding: 2rem 0 2rem;
 }
 
@@ -406,9 +327,7 @@ img {
         row-gap: 1rem;
         margin-left: 1rem;
     }
-    .home__title,
-    .home__subtitle,
-    .home__summary {
+    .home__title, .home__subtitle, .home__summary {
         line-height: .9;
         text-align: initial;
     }
@@ -445,8 +364,7 @@ img {
         -moz-column-gap: 3rem;
         column-gap: 3rem;
     }
-    .section__title,
-    .home__container {
+    .section__title, .home__container {
         text-align: initial;
     }
     .home__summary {
@@ -509,9 +427,7 @@ img {
         row-gap: 1rem;
         margin-left: 1rem;
     }
-    .home__title,
-    .home__subtitle,
-    .home__summary {
+    .home__title, .home__subtitle, .home__summary {
         line-height: .9;
         text-align: initial;
     }
@@ -548,8 +464,7 @@ img {
         -moz-column-gap: 3rem;
         column-gap: 3rem;
     }
-    .section__title,
-    .home__container {
+    .section__title, .home__container {
         text-align: initial;
     }
     .home__summary {

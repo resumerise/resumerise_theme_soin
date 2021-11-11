@@ -12,13 +12,7 @@
 					label: it.resume.settings?.labels?.categoryProperty?.volunteer?.organization, 
 					value: volunteer.organization,
 					showLabel: false,
-					classes: 'volunteer__organization',
-				}) %>
-				<%~ include('key-value-item', {
-					label: it.resume.settings?.labels?.categoryProperty?.volunteer?.position, 
-					value: volunteer.position,
-					showLabel: false,
-					classes: 'volunteer__position',
+					classes: 'wrapper__title',
 				}) %>
 				<%~ include('date-range', {
 					formatDate: it.formatDate,
@@ -27,6 +21,12 @@
 					present: volunteer.present,
 					showLabel: false,
 					settings: it.resume.settings
+				}) %>
+				<%~ include('key-value-item', {
+					label: it.resume.settings?.labels?.categoryProperty?.volunteer?.position, 
+					value: volunteer.position,
+					showLabel: false,
+					classes: 'wrapper__subtitle',
 				}) %>
 				<%~ include('key-value-item', {
 					label: it.resume.settings?.labels?.categoryProperty?.volunteer?.website, 

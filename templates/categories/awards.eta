@@ -12,7 +12,7 @@
 					label: it.resume.settings?.labels?.categoryProperty?.award?.title, 
 					value: award.title,
 					showLabel: false,
-					classes: 'award__title'
+					classes: 'wrapper__title'
 				}) %>
 				<%~ include('key-value-item', {
 					label: it.resume.settings?.labels?.categoryProperty?.award?.date, 
@@ -24,13 +24,13 @@
 					label: it.resume.settings?.labels?.categoryProperty?.award?.awarder, 
 					value: award.awarder,
 					showLabel: false,
-					classes: 'award__awarder'
+					classes: 'wrapper__subtitle'
 				}) %>
 				<%~ include('key-value-item', {
 					label: it.resume.settings?.labels?.categoryProperty?.award?.summary, 
 					value: award.summary,
 					showLabel: false,
-					classes: 'award__summary'
+					classes: 'section__summary'
 				}) %>
 			</div>
 		<% }) %>

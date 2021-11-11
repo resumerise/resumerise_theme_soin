@@ -12,7 +12,7 @@
 				label: it.resume.settings?.labels?.categoryProperty?.language?.language, 
 				value: language.language,
 				showLabel: false,
-				classes: 'language__name'
+				classes: 'wrapper__subtitle'
 			}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.language?.fluency, 

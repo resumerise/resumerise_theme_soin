@@ -12,7 +12,7 @@
                     label: it.resume.settings?.labels?.categoryProperty?.publication?.name, 
                     value: publication.name,
                     showLabel: false,
-                    classes: 'publication__name',
+                    classes: 'wrapper__title',
                 }) %>
                    <%~ include('key-value-item', {
                     label: it.resume.settings?.labels?.categoryProperty?.publication?.releaseDate, 

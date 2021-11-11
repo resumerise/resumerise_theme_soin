@@ -12,7 +12,7 @@
 				label: it.resume.settings?.labels?.categoryProperty?.interest?.name, 
 				value: interest.name,
 				showLabel: false,
-				classes: 'interest__name',
+				classes: 'wrapper__subtitle',
 			}) %>
 			<%~ include('list', {
 				label: it.resume.settings?.labels?.categoryProperty?.interest?.keywords, 

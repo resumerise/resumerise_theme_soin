@@ -16,7 +16,7 @@
 					label: it.resume.settings?.labels?.categoryProperty?.project?.title, 
 					value: project.title,
 					showLabel: false,
-					classes: 'project__title'
+					classes: 'wrapper__title'
 				}) %>
 				<%~ include('date-range', {
 					formatDate: it.formatDate,

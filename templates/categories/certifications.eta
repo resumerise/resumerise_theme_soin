@@ -10,7 +10,7 @@
 					label: it.resume.settings?.labels?.categoryProperty?.certificate?.title, 
 					value: certificate.title,
 					showLabel: false,
-					classes: 'certificate__title',
+					classes: 'wrapper__title',
 				}) %>
 				<%~ include('key-value-item', {
 					label: it.resume.settings?.labels?.categoryProperty?.certificate?.issueDate, 
@@ -22,7 +22,7 @@
 					label: it.resume.settings?.labels?.categoryProperty?.certificate?.issuer, 
 					value: certificate.issuer,
 					showLabel: false,
-					classes: 'certificate__issuer',
+					classes: 'wrapper__subtitle',
 				}) %>
 			</div>
 		<% }) %>

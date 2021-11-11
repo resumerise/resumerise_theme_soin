@@ -7,7 +7,7 @@
             <div class="wrapper">
                 <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work, showDelete: true, id: work.id}) %>
                 <% if (work.company) { %>
-                <h4 class="work__title">
+                <h4 class="wrapper__title">
                     <%= work.company %>
                 </h4>
                 <% } %>
@@ -24,7 +24,7 @@
                     label: it.resume.settings?.labels?.categoryProperty?.work?.position, 
                     value: work.position,
                     showLabel: false,
-                    classes: 'work__position',
+                    classes: 'wrapper__subtitle',
                 }) %>
                 <%~ include('key-value-item', {
                     label: it.resume.settings?.labels?.categoryProperty?.work?.website, 
@@ -36,7 +36,7 @@
                     label: it.resume.settings?.labels?.categoryProperty?.work?.summary, 
                     value: work.summary,
                     showLabel: false,
-                    classes: 'work__summary',
+                    classes: 'section__summary',
                 }) %>
                 <%~ include('list', {
                     label: it.resume.settings?.labels?.categoryProperty?.work?.highlights, 

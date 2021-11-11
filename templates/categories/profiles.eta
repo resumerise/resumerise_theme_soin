@@ -12,7 +12,7 @@
                     label: it.resume.settings?.labels?.categoryProperty?.profile?.network, 
                     value: profile.network,
                     showLabel: false,
-                    classes: 'profile__network'
+                    classes: 'wrapper__subtitle'
                 }) %>
                 <%~ include('key-value-item', {
                     label: it.resume.settings?.labels?.categoryProperty?.profile?.username, 

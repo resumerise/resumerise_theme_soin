@@ -11,7 +11,7 @@
 				label: it.resume.settings?.labels?.categoryProperty?.skill?.name, 
 				value: skill.name,
 				showLabel: false,
-				classes: 'skills__info',
+				classes: 'wrapper__subtitle',
 			}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.skill?.level, 
