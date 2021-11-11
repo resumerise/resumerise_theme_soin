@@ -117,7 +117,7 @@ img {
 
 /*========== CLASS CSS ==========*/
 
-.section {
+section {
     padding: 2rem 0 4rem;
 }
 
@@ -159,11 +159,11 @@ img {
     color: var(--black-color);
 }
 
-.section__container {
+section__container {
     row-gap: var(--mb-2);
 }
 
-.section__description {
+section__description {
     margin-top: var(--mb-0-5);
 }
 
@@ -256,7 +256,7 @@ img {
     text-align: center;
 }
 
-.section__summary {
+section__summary {
     margin-top: var(--mb-0-5);
 }
 
@@ -288,6 +288,7 @@ img {
 }
 
 /*========== EDUCATION SECTION ==========*/
+
 .education__gpa {
     font-size: var(--h3-font-size);
 }
@@ -298,8 +299,7 @@ img {
 
 /*========== FIXES SECTION ==========*/
 
-.references,
-.certifications {
+.references, .certifications {
     padding: 2rem 0 0;
 }
 
@@ -362,7 +362,7 @@ img {
         -moz-column-gap: 3rem;
         column-gap: 3rem;
     }
-    .section__title, .home__container {
+    section__title, .home__container {
         text-align: initial;
     }
     .home__summary {
@@ -373,10 +373,10 @@ img {
 /*========== MEDIA PRINT ==========*/
 
 @media print {
-    .section {
+    section {
         padding: 2rem 0 4rem;
     }
-    .section__title {
+    section__title {
         position: relative;
         font-size: var(--h1-font-size);
         color: var(--first-color);
@@ -385,7 +385,7 @@ img {
         text-transform: uppercase;
         margin-bottom: var(--mb-1-5);
     }
-    .section__title::before {
+    section__title::before {
         position: absolute;
         content: '';
         width: 60px;
@@ -462,7 +462,7 @@ img {
         -moz-column-gap: 3rem;
         column-gap: 3rem;
     }
-    .section__title, .home__container {
+    section__title, .home__container {
         text-align: initial;
     }
     .home__summary {

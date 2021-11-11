@@ -1,4 +1,4 @@
-<section class="section interests" id="interests">
+<section class="interests" id="interests">
 	<% if(it.resume.settings?.labels?.categoryProperty?.interest?.categoryTitle) { %>
 		<h3 class="section__title">
 			<%= it.resume.settings.labels.categoryProperty.interest.categoryTitle %>
