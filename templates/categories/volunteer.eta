@@ -15,7 +15,6 @@
 					classes: 'wrapper__title',
 				}) %>
 				<%~ include('date-range', {
-					formatDate: it.formatDate,
 					startDate: volunteer.startDate,
 					endDate: volunteer.endDate,
 					present: volunteer.present,

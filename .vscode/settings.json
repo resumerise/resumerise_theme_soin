@@ -4,6 +4,5 @@
     "https://deno.land": false,
     "https://jspm.dev": false
   },
-  "deno.enable": true,
-  "deno.importMap": "./import_maps.json"
+  "deno.enable": true
 }

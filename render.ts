@@ -1,25 +1,18 @@
 import * as eta from "https://deno.land/x/eta@v1.6.0/mod.ts";
 import {
-  CompileException,
   getAddItemTemplatePath,
-  getFileContent,
   getNavTemplatePath,
+  getProfileItem,
   getWidgetCSSFilePath,
   getWidgetDateRangeFilePath,
+  getWidgetKeyMailPairFilePath,
+  getWidgetKeyUrlPairFilePath,
   getWidgetKeyValuePairFilePath,
   getWidgetListFilePath,
-} from "resumerise_library/mod.ts";
-import { Resume } from "resumerise_library/codegen/model/resume.ts";
-import { format } from "https://deno.land/std@0.102.0/datetime/mod.ts";
-import { Settings } from "resumerise_library/codegen/model/settings.ts";
+  getWidgetSkillListFilePath,
+} from "./theme-library.ts";
 
-function formatDate(timestamp: string, settings: Settings) {
-  try {
-    return format(new Date(timestamp), settings?.dateFormat!);
-  } catch (e) {
-    console.log(`Date could not be formatted ${e}`);
-  }
-}
+import { CompileException, getFileContent, Resume } from "./core-library.ts";
 
 export const render = async (
   resume: Resume,
@@ -264,7 +257,6 @@ export const render = async (
     const result = await eta.render(layout, {
       css: css,
       widgetCss: widgetCss,
-      formatDate: formatDate,
       resume: resume,
       type: type,
       templates: Array.from(orderedMap.values()).filter((item) => !!item),
