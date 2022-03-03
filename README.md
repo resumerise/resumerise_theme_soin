@@ -48,11 +48,3 @@ completely optional, as you could just write all of your styles in the `<style>`
 tags of your `layout.eta`. The contents of the `style.css` are put into the
 `<style>` tags of your compiled theme later, yet again, this is something can
 change.
-
-## Deployment
-
-[tbd]
-
-## License
-
-Available under [the MIT license](http://mths.be/mit).
